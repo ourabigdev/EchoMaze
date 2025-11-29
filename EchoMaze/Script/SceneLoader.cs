@@ -1,5 +1,6 @@
 ﻿using Stride.Core.Mathematics;
 using Stride.Engine;
+using Stride.Engine.Events;
 using Stride.Input;
 using Stride.UI;
 using Stride.UI.Controls;
@@ -12,34 +13,83 @@ using System.Threading.Tasks;
 
 namespace EchoMaze.Script;
 
-public class SceneLoader : StartupScript
+public class SceneLoader : SyncScript
 {
-    private Scene LevelScene;
     private Scene Load;
-    private Scene MenuScene;
     private Entity uiEntity;
     private UIComponent uiComponent;
+
+    // Persist receivers as fields so they keep registered state across frames.
+    private EventReceiver winReceiver;
+    private EventReceiver<string> winReceiverData;
 
     public override void Start()
     {
         Load = Entity.Scene;
-        LevelScene = Content.Load<Scene>("MainScene");
-        MenuScene = Content.Load<Scene>("MainMenu");
+        // Initialize receivers once here (not every Update).
+        winReceiver = new EventReceiver(EchoCollector.winEvent);
+        winReceiverData = new EventReceiver<string>(EchoCollector.winEventData);
 
-        uiEntity = Entity.FindChild("Menu");
-        uiComponent = uiEntity.Get<UIComponent>();
-        var page = uiComponent.Page;
-        var button = page.RootElement.FindVisualChildOfType<Button>("Start");
+        LoadMenu();
+    }
 
-        Load.Children.Add(MenuScene);
-        button.Click += ButtonClickedEvent;
+    public override void Update()
+    {
+        // Reuse the persistent receivers to poll for events.
+        if (winReceiver.TryReceive())
+        {
+            LoadMenu();
+        }
+
     }
 
     private void ButtonClickedEvent(object sender, Stride.UI.Events.RoutedEventArgs e)
     {
-        MenuScene.Parent = null;
-        uiComponent.Enabled = false;
-        Load.Children.Add(LevelScene);
-
+        LoadLevel();
     }
+
+    private void LoadMenu()
+    {
+        // Detach and clear old scenes
+        foreach (var child in Load.Children.ToList())
+            child.Parent = null;
+        Load.Children.Clear();
+
+        // Load new menu
+        var menuScene = Content.Load<Scene>("MainMenu");
+        Load.Children.Add(menuScene);
+
+        // Grab UI from new menu
+        uiEntity = Entity.FindChild("Menu");
+        if (uiEntity == null) return;
+
+        uiComponent = uiEntity.Get<UIComponent>();
+        if (uiComponent == null) return;
+
+        // Grab button and assign event
+        var button = uiComponent.Page.RootElement.FindVisualChildOfType<Button>("Start");
+        if (button != null)
+        {
+            button.Click -= ButtonClickedEvent; // prevent duplicate
+            button.Click += ButtonClickedEvent;
+        }
+
+        uiComponent.Enabled = true;
+
+        // Unlock mouse for menu
+        Input.UnlockMousePosition();
+    }
+
+    private void LoadLevel()
+    {
+        foreach (var child in Load.Children.ToList())
+            child.Parent = null;
+        Load.Children.Clear();
+
+        uiComponent.Enabled = false;
+
+        var levelScene = Content.Load<Scene>("MainScene");
+        Load.Children.Add(levelScene);
+    }
+
 }

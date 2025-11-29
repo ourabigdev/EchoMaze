@@ -11,7 +11,20 @@ Hierarchy:
         - ref!! 3a9ee0c6-9550-4060-a335-70a920b4cd4f
         - ref!! 5ac8c9cd-374e-428a-a8a3-cc1181671412
         - ref!! 992e10d4-73da-4480-8fce-12a539366d21
+        - ref!! 20a95c68-16d7-4af5-86d5-c2bd3e277e1b
     Parts:
+        -   Entity:
+                Id: 20a95c68-16d7-4af5-86d5-c2bd3e277e1b
+                Name: Manager
+                Components:
+                    fddd0563e35f54692da5184b5b2575aa: !TransformComponent
+                        Id: ad27f7fd-219e-4557-a1ab-916dfd6d756f
+                        Position: {X: 0.0, Y: 0.0, Z: 0.0}
+                        Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                        Scale: {X: 1.0, Y: 1.0, Z: 1.0}
+                        Children: {}
+                    762ac58299080378fed5e83a45f1ef79: !EchoMaze.Script.Menu,EchoMaze
+                        Id: 3f6e6b5a-ef94-4119-873b-29e8ffc6a3e9
         -   Entity:
                 Id: 365124f1-7f17-4ca1-a972-9e72d3cc1f25
                 Name: Directional light

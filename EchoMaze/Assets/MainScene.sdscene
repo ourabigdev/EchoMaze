@@ -135,6 +135,7 @@ Hierarchy:
                         Children:
                             25920df711d2d6b57de2116978994544: ref!! 4d2b3234-685e-4789-afcc-49f5a3acd257
                             fed412f6e324c96da35027207ef768b2: ref!! 8146b099-a9dd-4b46-b395-187f793a5044
+                            ad4e75bed96622cb55970d1c79f0629c: ref!! ecf6d30b-562f-40b2-8bb0-ce1bf15dbb69
                     bf9673195dd6cbbb0062c2b7f0afab65: !ModelComponent
                         Id: 939073c7-7592-422d-bd5f-885f57c2ce38
                         Model: ffd9917f-1a2f-457d-ac22-0b5774fe8b07:Models/audioCaller
@@ -357,6 +358,37 @@ Hierarchy:
             Base:
                 BasePartAsset: 9eb6404d-a826-426f-a2a7-b8bd7283e55a:prefab/audioCaller
                 BasePartId: 79833282-46b2-4141-b0bd-a3a7faf4b43d
+                InstanceId: 52e50c45-7eb4-4b7e-bdad-a1696ec4fafa
+        -   Entity:
+                Id: 970e901c-cc2d-44bb-8fbf-1dcba12d4420
+                Name: EchoCollector
+                Components:
+                    be00cc2d530f69c1ba024dbc08b1df0c: !TransformComponent
+                        Id: ecf6d30b-562f-40b2-8bb0-ce1bf15dbb69
+                        Position: {X: 0.0, Y: 0.0, Z: 0.0}
+                        Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                        Scale: {X: 1.0, Y: 1.0, Z: 1.0}
+                        Children: {}
+                    9872ec6ce92542cf629f0900c0eb73ca: !Stride.BepuPhysics.StaticComponent,Stride.BepuPhysics
+                        Id: ff1ef345-1fc2-4985-9698-52c4366832a5
+                        Collider: !Stride.BepuPhysics.Definitions.Colliders.CompoundCollider,Stride.BepuPhysics
+                            Colliders:
+                                a614a5b1a34ca5a75985b7528d702286: !Stride.BepuPhysics.Definitions.Colliders.BoxCollider,Stride.BepuPhysics
+                                    Mass: 1.0
+                                    PositionLocal: {X: 0.0, Y: 0.0, Z: 0.0}
+                                    RotationLocal: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                                    Size: {X: 5.0, Y: 5.0, Z: 5.0}
+                        SpringFrequency: 30.0
+                        SpringDampingRatio: 3.0
+                        FrictionCoefficient: 1.0
+                        MaximumRecoveryVelocity: 1000.0
+                        CollisionGroup: {}
+                        ContactEventHandler: !EchoMaze.Script.EchoCollector,EchoMaze ref!! db716aed-0ece-42d1-a54a-4b49f5c6ab25
+                    1824fb5c6409951661b7ea4eff5deace: !EchoMaze.Script.EchoCollector,EchoMaze
+                        Id: db716aed-0ece-42d1-a54a-4b49f5c6ab25
+            Base:
+                BasePartAsset: 9eb6404d-a826-426f-a2a7-b8bd7283e55a:prefab/audioCaller
+                BasePartId: 78b8170c-b0aa-4b39-9a4f-61bf74b1737e
                 InstanceId: 52e50c45-7eb4-4b7e-bdad-a1696ec4fafa
         -   Entity:
                 Id: 9eec5db4-46f6-4942-99a3-b92bec327571

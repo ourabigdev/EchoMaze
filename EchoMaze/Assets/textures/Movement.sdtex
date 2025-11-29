@@ -1,0 +1,7 @@
+!Texture
+Id: 16a4c10a-cfb9-4922-991e-ae0fa79fa626
+SerializedVersion: {Stride: 2.0.0.0}
+Tags: []
+Source: !file ../../Resources/Movement.png
+Type: !ColorTextureType
+    ColorKeyColor: {R: 255, G: 0, B: 255, A: 255}

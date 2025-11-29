@@ -12,12 +12,13 @@ Hierarchy:
                 Components:
                     114f78244d6b3c82144e5bfe1e0d22b7: !TransformComponent
                         Id: dcf6fe60-ca1b-4a5e-8a0f-66f75311d81e
-                        Position: {X: 67.4044, Y: -1.7293398, Z: -8.913116}
+                        Position: {X: 0.0, Y: 0.0, Z: 0.0}
                         Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
                         Scale: {X: 0.5, Y: 0.5, Z: 0.5}
                         Children:
                             25920df711d2d6b57de2116978994544: ref!! 3fe55671-70c8-4799-8040-2a6e310303b2
                             fed412f6e324c96da35027207ef768b2: ref!! 56247f25-edb5-48a3-86f7-ec7703d0c1bf
+                            0615685d8123533383211d77f5629bf6: ref!! 7d974d1d-18bd-4bf4-8422-03a0eb3c47a6
                     bf9673195dd6cbbb0062c2b7f0afab65: !ModelComponent
                         Id: c9710761-16e5-4392-a8a0-de5ada606d49
                         Model: ffd9917f-1a2f-457d-ac22-0b5774fe8b07:Models/audioCaller
@@ -58,6 +59,33 @@ Hierarchy:
                         UseHRTF: false
                         DirectionalFactor: 0.0
                         Environment: Large
+        -   Entity:
+                Id: 78b8170c-b0aa-4b39-9a4f-61bf74b1737e
+                Name: EchoCollector
+                Components:
+                    be00cc2d530f69c1ba024dbc08b1df0c: !TransformComponent
+                        Id: 7d974d1d-18bd-4bf4-8422-03a0eb3c47a6
+                        Position: {X: 0.0, Y: 0.0, Z: 0.0}
+                        Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                        Scale: {X: 1.0, Y: 1.0, Z: 1.0}
+                        Children: {}
+                    9872ec6ce92542cf629f0900c0eb73ca: !Stride.BepuPhysics.StaticComponent,Stride.BepuPhysics
+                        Id: e3c47109-69e4-4f66-83ee-28d87303aee6
+                        Collider: !Stride.BepuPhysics.Definitions.Colliders.CompoundCollider,Stride.BepuPhysics
+                            Colliders:
+                                a614a5b1a34ca5a75985b7528d702286: !Stride.BepuPhysics.Definitions.Colliders.BoxCollider,Stride.BepuPhysics
+                                    Mass: 1.0
+                                    PositionLocal: {X: 0.0, Y: 0.0, Z: 0.0}
+                                    RotationLocal: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                                    Size: {X: 5.0, Y: 5.0, Z: 5.0}
+                        SpringFrequency: 30.0
+                        SpringDampingRatio: 3.0
+                        FrictionCoefficient: 1.0
+                        MaximumRecoveryVelocity: 1000.0
+                        CollisionGroup: {}
+                        ContactEventHandler: !EchoMaze.Script.EchoCollector,EchoMaze ref!! abf1c029-ba65-4ae2-b026-e85b0c3f8be6
+                    1824fb5c6409951661b7ea4eff5deace: !EchoMaze.Script.EchoCollector,EchoMaze
+                        Id: abf1c029-ba65-4ae2-b026-e85b0c3f8be6
         -   Entity:
                 Id: 79833282-46b2-4141-b0bd-a3a7faf4b43d
                 Name: audioLight
