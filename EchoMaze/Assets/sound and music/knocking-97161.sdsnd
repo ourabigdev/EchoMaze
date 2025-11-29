@@ -1,0 +1,9 @@
+!Sound
+Id: ef69fb38-9f61-4c79-8026-1d6d7068840f
+SerializedVersion: {Stride: 2.0.0.0}
+Tags: []
+Source: !file ../../Resources/sounds and music/knocking-97161.mp3
+SampleRate: 24000
+CompressionRatio: 15
+StreamFromDisk: false
+Spatialized: true

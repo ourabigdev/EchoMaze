@@ -1,0 +1,27 @@
+!Model
+Id: ffd9917f-1a2f-457d-ac22-0b5774fe8b07
+SerializedVersion: {Stride: 2.0.0.0}
+Tags: []
+Source: !file ../../Resources/audioCaller.glb
+Skeleton: null
+PivotPosition: {X: 0.0, Y: 0.0, Z: 0.0}
+Materials:
+    584dc283352e46231a824b8ee02715db:
+        Name: Material.001
+        MaterialInstance:
+            Material: e1cfbdc5-ae2b-4ee9-bcf9-d812d7977fc1:materials/Material.001
+    824774d62f17ce2ec37b35dffccec7a2:
+        Name: Material.002
+        MaterialInstance:
+            Material: 2fbb62f8-6a64-4aba-bc72-883d4eca9fa8:materials/Material.002
+    ab2c77e78ac00d2d7f76a515f3d1837b:
+        Name: Mor_all
+        MaterialInstance:
+            Material: 7d8a39f6-46cb-4543-8ef0-e9456923f6a2:materials/Mor_all_Caller
+    2bc323cba46d1621124447c5699f8265:
+        Name: Mor_asa
+        MaterialInstance:
+            Material: 91fedef9-10ab-4ac5-bae4-5656ed03d523:materials/Mor_asa_Caller
+Modifiers: {}
+~SourceHashes:
+    4de23e2ca3a0c51ea2a4d44d96c10d7e~../../Resources/audioCaller.glb: 85c3f495d30bbfb7bc320deeb3b1a320

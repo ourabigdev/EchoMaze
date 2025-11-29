@@ -8,27 +8,33 @@ using Stride.Input;
 using Stride.Engine;
 using Stride.BepuPhysics;
 using Stride.Audio;
+using Stride.Particles.Components;
 
 namespace EchoMaze.Script;
 
 public class CharacterMovement : SyncScript
 {
     // Declared public member fields and properties will show in the game studio
-    public Vector3 MovemetMultiplayer = new Vector3(3, 0, 4);
-
+    private Vector3 MovemetMultiplayer = new Vector3(3, 0, 4);
     private CharacterComponent character;
+
     private AnimationComponent anim;
-    private LightComponent lightBat;
     private Entity modelEntity;
+
     private Entity BatLight;
-    private float LightDuration = 0.7f;
-    private float timer = 0f;
-    private bool lightActive = false;
     private Sound batSoundEffect;
     private SoundInstance soundEffect;
+    private Sound CaveSoundEffect;
+    private SoundInstance caveSound;
 
-    private float LightCooldown = 4f;
+    private LightComponent lightBat;
+    private float LightCooldown = 3f;
     private float cooldownTimer = 0f;
+    private float LightDuration = 2f;
+    private float timer = 0f;
+    private bool lightActive = false;
+
+    public ParticleSystemComponent particle;
 
     protected void PlayAnimation(string name)
     {
@@ -43,15 +49,31 @@ public class CharacterMovement : SyncScript
         // Initialization of the script.
         character = Entity.Get<CharacterComponent>();
         modelEntity = Entity.FindChild("bat");
-        BatLight = Entity.FindChild("BatLight");
         anim = modelEntity.Get<AnimationComponent>();
+
+        //light
+        BatLight = Entity.FindChild("BatLight");
         lightBat = BatLight.Get<LightComponent>();
+
+        //sounds
+        //bat
         batSoundEffect = Content.Load<Sound>("sound and music/batPower");
         soundEffect = batSoundEffect.CreateInstance();
         soundEffect.IsLooping = false;
-        soundEffect.Volume = 0.15f;
+        soundEffect.Volume = 0.07f;
+        //cave
+        CaveSoundEffect = Content.Load<Sound>("sound and music/ambient-sound-1-17076");
+        caveSound = CaveSoundEffect.CreateInstance();
+        caveSound.IsLooping = true;
+        caveSound.Volume = 0.025f;
+
+
+        //implement
+        caveSound.Play();
         lightBat.Enabled = false;
         PlayAnimation("flap");
+        particle.ParticleSystem.Stop();
+        particle.ParticleSystem.ResetSimulation();
     }
 
     public override void Update()
@@ -76,6 +98,9 @@ public class CharacterMovement : SyncScript
 
         if (light && cooldownTimer <= 0f)
         {
+            particle.ParticleSystem.Stop();
+            particle.ParticleSystem.ResetSimulation();
+            particle.ParticleSystem.Play();
             lightBat.Enabled = true;
             lightActive = true;
             soundEffect.Play();

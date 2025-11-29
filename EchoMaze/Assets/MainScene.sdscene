@@ -10,6 +10,7 @@ Hierarchy:
         - ref!! 21d772fe-49db-4569-a91c-c780b537b9ab
         - ref!! 57342d7a-7a99-4a03-ba9f-7b7217083bda
         - ref!! 2e5ab9ac-63a3-4b5c-bee7-16bdfbf48cf0
+        - ref!! a988c0bf-42aa-47a7-888f-d4e0318bf9f0
     Parts:
         -   Entity:
                 Id: 0c22ac43-aa09-4289-b60e-45c1ad5a9c63
@@ -22,6 +23,10 @@ Hierarchy:
                         Scale: {X: 1.0, Y: 1.0, Z: 1.0}
                         Children:
                             e269af3c9af9bb8a6d3d17764c58c0cc: ref!! 721e3eca-3f7f-4e6a-9893-31e5159cc4a4
+            Base:
+                BasePartAsset: 37f06626-4a2f-4f6e-a63d-720b98b71cf6:prefab/Player
+                BasePartId: 7405023d-e7fc-4b37-83b3-ee9ef63c1eba
+                InstanceId: 1f72664c-da88-4cc5-936b-260f581fba82
         -   Entity:
                 Id: 21d772fe-49db-4569-a91c-c780b537b9ab
                 Name: Skybox
@@ -51,20 +56,24 @@ Hierarchy:
                         Scale: {X: 0.1, Y: 0.1, Z: 0.1}
                         Children: {}
                     b1e8fe079c0576c5ecdae0f4f0024615: !ModelComponent
-                        Id: 42acad08-f9a1-4400-b2d4-369458c75e98
+                        Id: 3e50c626-d4dd-40f8-b589-cce9de975f57
                         Model: 528a919c-4369-43ac-8728-6f7ea6d42005:Models/bat
                         Materials: {}
                     8a494bc5662aa2321829217cef208091: !AnimationComponent
-                        Id: 3c5871a6-10e5-486f-ae7a-968ffb0f6352
+                        Id: 41f14eae-d994-490b-949f-322ff25ad5ff
                         Animations:
                             47233d3bbb4004e6fa4f9f7e9c6c00c6~flap: 295e7e65-3453-4f34-9851-dc5ca03f3413:Models/bat_Armature_Armature_ArmatureAction
+            Base:
+                BasePartAsset: 37f06626-4a2f-4f6e-a63d-720b98b71cf6:prefab/Player
+                BasePartId: 1c857988-5375-4cac-9db4-3d06ccf10a48
+                InstanceId: 1f72664c-da88-4cc5-936b-260f581fba82
         -   Entity:
                 Id: 2e5ab9ac-63a3-4b5c-bee7-16bdfbf48cf0
                 Name: Player
                 Components:
                     1c141b6e73c38d776d8746c123b382b0: !TransformComponent
                         Id: c4d2ba1b-dd20-4fa2-8c17-b2ccb55eb87c
-                        Position: {X: 4.000121, Y: 3.7528138, Z: 5.739058}
+                        Position: {X: 0.0, Y: 0.0, Z: 0.0}
                         Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
                         Scale: {X: 1.0, Y: 1.0, Z: 1.0}
                         Children:
@@ -72,26 +81,27 @@ Hierarchy:
                             56031f0904a6c2583742a699109e18f1: ref!! f9fd0fb3-6f35-4025-bb42-80aa2844e6f0
                             09321a9ba457f8f3cfb58e7ebd8f1388: ref!! 9e10e527-9d48-4ea4-b8a2-a4e26f0a20eb
                             b244cdc2f171883a4f855b9eebaecebe: ref!! 46c32219-524b-4c66-9687-1d6e73608a92
+                            ecce45663252398374fc68cd1ee889bd: ref!! 4fb79279-4f92-498d-8357-0eaaecc317a5
                     839d1343e9ac8b4f7f7f40049b907bda: !EchoMaze.Script.CharacterMovement,EchoMaze
-                        Id: f3445f53-661b-4a64-99e2-349cc3fe45db
-                        MovemetMultiplayer: {X: 3.0, Y: 0.0, Z: 4.0}
+                        Id: d49edc52-d4c5-410c-833d-e9c2d47a0d01
+                        particle*: ref!! 06704090-8fd4-4555-87c2-46b139136c92
                     d68b2f0a88b4d1ca1b6defc30603b418: !EchoMaze.Script.CameraController,EchoMaze
-                        Id: d220144d-f7b6-4d06-aafd-de81b148a54c
+                        Id: 753199ed-3e42-45a4-bb60-c5f26a0649b6
                         InvertY: false
                         MouseSpeed: {X: 0.8, Y: 0.7}
                         MaxLookUpAngle: -40.0
                         MaxLookDownAngle: 40.0
                         MinimumCameraDistance: 1.5
                     cc7bb0397c2cdf28360afec1e2875ae1: !Stride.BepuPhysics.CharacterComponent,Stride.BepuPhysics
-                        Id: 1c839221-0592-4308-abb1-3c6cb3136a47
+                        Id: 9029b747-a0e7-48e8-9365-45a10635f988
                         Collider: !Stride.BepuPhysics.Definitions.Colliders.CompoundCollider,Stride.BepuPhysics
                             Colliders:
                                 44984bf10cef5776a74161614a863512: !Stride.BepuPhysics.Definitions.Colliders.CapsuleCollider,Stride.BepuPhysics
                                     Mass: 1.0
                                     PositionLocal: {X: 0.0, Y: 0.0, Z: 0.0}
                                     RotationLocal: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
-                                    Radius: 0.5
-                                    Length: 1.0
+                                    Radius: 1.0
+                                    Length: 0.5
                         SpringFrequency: 30.0
                         SpringDampingRatio: 3.0
                         FrictionCoefficient: 1.0
@@ -99,39 +109,199 @@ Hierarchy:
                         CollisionGroup: {}
                         ContactEventHandler: null
                         Kinematic: false
-                        Gravity: true
+                        Gravity: false
                         ContinuousDetectionMode: Discrete
                         InterpolationMode: Interpolated
                         SleepThreshold: 0.01
                         MinimumTimestepCountUnderThreshold: 32
                         Speed: 10.0
                         JumpForce: 10.0
+                    f294563699d65576ba29a019b872c0eb: !AudioListenerComponent
+                        Id: e2d6217c-22e6-459a-8a0d-9f40688b7407
+            Base:
+                BasePartAsset: 37f06626-4a2f-4f6e-a63d-720b98b71cf6:prefab/Player
+                BasePartId: 80e8b9c9-ca20-424c-bd4b-552e1a37e694
+                InstanceId: 1f72664c-da88-4cc5-936b-260f581fba82
         -   Entity:
-                Id: 36083f9a-a4f9-4959-9986-3c50eeec7ed6
-                Name: map
+                Id: 35b43152-1639-4ac8-a837-58c516a48a3b
+                Name: audioCaller
                 Components:
-                    226c3cee0f57a50ccbcf18c22714adf1: !TransformComponent
-                        Id: 2b0c465b-53d7-42f2-bf1d-3efae3c2b650
-                        Position: {X: 0.0, Y: 0.0, Z: 0.0}
+                    114f78244d6b3c82144e5bfe1e0d22b7: !TransformComponent
+                        Id: ef7e4f4a-208a-4217-bcd8-8c716c57a56a
+                        Position*: {X: 55.835396, Y: -1.7293398, Z: -68.58617}
                         Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
-                        Scale: {X: 1.0, Y: 1.0, Z: 1.0}
-                        Children: {}
-                    ea7e9e945db8fc44c67d585855a16831: !ModelComponent
-                        Id: b9bbd3b2-d3ee-4352-9a03-cd769d028085
-                        Model: 108ddb9e-69d0-41df-b4b8-d5fad3b3138d:Models/map
+                        Scale: {X: 0.5, Y: 0.5, Z: 0.5}
+                        Children:
+                            25920df711d2d6b57de2116978994544: ref!! 4d2b3234-685e-4789-afcc-49f5a3acd257
+                            fed412f6e324c96da35027207ef768b2: ref!! 8146b099-a9dd-4b46-b395-187f793a5044
+                    bf9673195dd6cbbb0062c2b7f0afab65: !ModelComponent
+                        Id: 939073c7-7592-422d-bd5f-885f57c2ce38
+                        Model: ffd9917f-1a2f-457d-ac22-0b5774fe8b07:Models/audioCaller
                         Materials: {}
-                    497438e35f408f609891512b0c17c5c7: !Stride.BepuPhysics.StaticComponent,Stride.BepuPhysics
-                        Id: a03c524e-ae41-4799-b54e-eadcbfe05035
-                        Collider: !Stride.BepuPhysics.Definitions.Colliders.MeshCollider,Stride.BepuPhysics
-                            Model: 108ddb9e-69d0-41df-b4b8-d5fad3b3138d:Models/map
-                            Mass: 1.0
-                            Closed: true
+                    64c6510b441d2e012c6093a93ab700a2: !Stride.BepuPhysics.StaticComponent,Stride.BepuPhysics
+                        Id: 01c29cd9-d39d-491e-be7d-c38094720602
+                        Collider: !Stride.BepuPhysics.Definitions.Colliders.CompoundCollider,Stride.BepuPhysics
+                            Colliders:
+                                4a1d2e7361c1e474e3e443d009e776bd: !Stride.BepuPhysics.Definitions.Colliders.BoxCollider,Stride.BepuPhysics
+                                    Mass: 1.0
+                                    PositionLocal: {X: 0.0, Y: 0.0, Z: 0.0}
+                                    RotationLocal: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                                    Size: {X: 2.5, Y: 2.5, Z: 2.5}
                         SpringFrequency: 30.0
                         SpringDampingRatio: 3.0
                         FrictionCoefficient: 1.0
                         MaximumRecoveryVelocity: 1000.0
                         CollisionGroup: {}
                         ContactEventHandler: null
+                    d7184f9e191644b6e46e353102af935a: !EchoMaze.Script.audioCaller,EchoMaze
+                        Id: 6bbc3c06-60d1-4a7c-9f69-d408a2da2d72
+                        LightDuration: 0.4
+                        Cooldown: 1.2
+            Base:
+                BasePartAsset: 9eb6404d-a826-426f-a2a7-b8bd7283e55a:prefab/audioCaller
+                BasePartId: 1e4edb11-59c3-4d6a-a82c-e9efc900a81e
+                InstanceId: 52e50c45-7eb4-4b7e-bdad-a1696ec4fafa
+        -   Entity:
+                Id: 38bd736c-b86c-4bbc-8ccd-89c7eeed9b7b
+                Name: Wave
+                Components:
+                    5d8b2a5a23edb478e3d02a54dfb8a8b6: !TransformComponent
+                        Id: 78798dd6-f223-4a64-b1ea-74ebe99d508d
+                        Position: {X: 0.0, Y: 0.0, Z: 0.0}
+                        Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                        Scale: {X: 1.0, Y: 1.0, Z: 1.0}
+                        Children: {}
+                    c0ab7d4f4a77e5aab1c5f15d81308f34: !ParticleSystemComponent
+                        Id: 06704090-8fd4-4555-87c2-46b139136c92
+                        Control:
+                            ResetSeconds: 5.0
+                            Control: Play
+                        Color: {R: 0.0, G: 0.9183676, B: 1.0, A: 1.0}
+                        Speed: 1.0
+                        ParticleSystem:
+                            Settings: {}
+                            BoundingShape: null
+                            Emitters:
+                                42d0f2c330f3d8f1cc209c4ac4378b69:
+                                    ParticleLifetime: {X: 0.3, Y: 0.8}
+                                    SimulationSpace: Local
+                                    ShapeBuilder: !ShapeBuilderBillboard
+                                        SamplerPosition: null
+                                        SamplerSize: null
+                                        SamplerRotation: null
+                                    Material: !ParticleMaterialComputeColor
+                                        ComputeColor: !ComputeTextureColor
+                                            Texture: f15ec937-9ec8-4489-b3b5-f5f7ad74a396:textures/shockwave
+                                            FallbackValue:
+                                                Value: {R: 0.0, G: 0.88750005, B: 1.0, A: 1.0}
+                                            Scale: {X: 1.0, Y: 1.0}
+                                            Offset: {X: 0.0, Y: 0.0}
+                                            Swizzle: null
+                                        UVBuilder: null
+                                        ForceTexCoords: false
+                                    Spawners:
+                                        8d786422d6ed5d7c9d05f2f23b18637f: !SpawnerPerSecond
+                                            LoopCondition: OneShot
+                                            Delay: {X: 0.0, Y: 0.0}
+                                            Duration: {X: 1.0, Y: 1.0}
+                                            SpawnCount: 13.0
+                                    Initializers:
+                                        957f939f498ae697bcf1b469cce1ecdb: !InitialSizeSeed
+                                            InheritPosition: true
+                                            Position: {X: 0.0, Y: 0.0, Z: 0.0}
+                                            InheritRotation: true
+                                            Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                                            InheritScale: true
+                                            Scale: {X: 1.0, Y: 1.0, Z: 1.0}
+                                            ScaleUniform: 1.0
+                                            SeedOffset: 0
+                                            DisplayParticlePosition: false
+                                            DisplayParticleRotation: false
+                                            DisplayParticleScale: false
+                                            DisplayParticleScaleUniform: true
+                                            RandomSize: {X: 0.1, Y: 0.5}
+                                        d43a3c4015e5fc9e8b4406e5072f8698: !InitialPositionSeed
+                                            InheritPosition: true
+                                            Position: {X: 0.0, Y: 0.0, Z: 0.0}
+                                            InheritRotation: true
+                                            Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                                            InheritScale: true
+                                            Scale: {X: 1.0, Y: 1.0, Z: 1.0}
+                                            ScaleUniform: 1.0
+                                            SeedOffset: 0
+                                            DisplayParticlePosition: false
+                                            DisplayParticleRotation: true
+                                            DisplayParticleScale: false
+                                            DisplayParticleScaleUniform: true
+                                            PositionMin: {X: 0.0, Y: 0.7, Z: 0.5}
+                                            PositionMax: {X: 0.0, Y: 0.7, Z: 1.0}
+                                            Interpolate: false
+                                        fe335c6e6acad20a6a8ccc5c1c9a9c99: !InitialVelocitySeed
+                                            InheritPosition: true
+                                            Position: {X: 0.0, Y: 0.0, Z: 0.0}
+                                            InheritRotation: true
+                                            Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                                            InheritScale: true
+                                            Scale: {X: 1.0, Y: 1.0, Z: 1.0}
+                                            ScaleUniform: 1.0
+                                            SeedOffset: 0
+                                            DisplayParticlePosition: false
+                                            DisplayParticleRotation: true
+                                            DisplayParticleScale: false
+                                            DisplayParticleScaleUniform: true
+                                            VelocityMin: {X: 0.0, Y: 0.0, Z: 0.0}
+                                            VelocityMax: {X: 0.0, Y: 1.0, Z: 0.0}
+                                    Updaters:
+                                        315fb12189a93504056308ae701c65a2: !UpdaterForceField
+                                            InheritPosition: true
+                                            Position: {X: 0.0, Y: 0.0, Z: 0.0}
+                                            InheritRotation: true
+                                            Rotation: {X: 0.0, Y: 0.0, Z: 0.17364818, W: 0.9848077}
+                                            InheritScale: true
+                                            Scale: {X: 1.0, Y: 1.0, Z: 1.0}
+                                            ScaleUniform: 1.0
+                                            DisplayParticlePosition: true
+                                            FieldShape: !FieldShapeCylinder
+                                                HalfHeight: 1.0
+                                                Radius: 1.0
+                                            DisplayParticleRotation: true
+                                            DisplayParticleScale: true
+                                            DisplayParticleScaleUniform: false
+                                            FieldFalloff:
+                                                StrengthInside: 1.0
+                                                FalloffStart: 0.1
+                                                StrengthOutside: 1.0
+                                                FalloffEnd: 0.9
+                                            EnergyConservation: 1.0
+                                            ForceDirected: 0.0
+                                            ForceVortex: 0.0
+                                            ForceRepulsive: 0.0
+                                            ForceFixed: {X: 0.0, Y: 0.0, Z: 20.0}
+            Base:
+                BasePartAsset: 37f06626-4a2f-4f6e-a63d-720b98b71cf6:prefab/Player
+                BasePartId: 75ba993e-b8cd-4d3c-86b6-974d13f47411
+                InstanceId: 1f72664c-da88-4cc5-936b-260f581fba82
+        -   Entity:
+                Id: 4a514661-b500-42ef-87d4-8de076ab9ce9
+                Name: audioCallerSound
+                Components:
+                    66e1513a9ab87ec261539fab2499e9da: !TransformComponent
+                        Id: 8146b099-a9dd-4b46-b395-187f793a5044
+                        Position: {X: 0.0, Y: 0.0, Z: 0.0}
+                        Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                        Scale: {X: 1.0, Y: 1.0, Z: 1.0}
+                        Children: {}
+                    f1dee859721c30b551fc77b32ae84e44: !AudioEmitterComponent
+                        Id: 99a20d8e-2549-4224-8aa4-5bbb37040579
+                        Sounds:
+                            c50bb55f263ed5747e94f05771835b1c~light: ef69fb38-9f61-4c79-8026-1d6d7068840f:sound and music/knocking-97161
+                        UseHRTF: false
+                        DirectionalFactor: 0.0
+                        Environment: Large
+            Base:
+                BasePartAsset: 9eb6404d-a826-426f-a2a7-b8bd7283e55a:prefab/audioCaller
+                BasePartId: 31a0803b-51ca-4c3e-b6e0-25a0f66f1dd0
+                InstanceId: 52e50c45-7eb4-4b7e-bdad-a1696ec4fafa
         -   Entity:
                 Id: 57342d7a-7a99-4a03-ba9f-7b7217083bda
                 Name: Map
@@ -142,7 +312,7 @@ Hierarchy:
                         Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
                         Scale: {X: 1.0, Y: 1.0, Z: 1.0}
                         Children:
-                            5fb67d35091d5d57c5826ee857699553: ref!! 2b0c465b-53d7-42f2-bf1d-3efae3c2b650
+                            da169c0b932eadee30c1d1a658828736: ref!! a1315fec-1844-4432-97bc-c69424e75db3
         -   Entity:
                 Id: 63e504e7-1453-4623-8085-168dd4b5f15a
                 Name: Camera
@@ -154,50 +324,123 @@ Hierarchy:
                         Scale: {X: 1.0, Y: 1.0, Z: 1.0}
                         Children: {}
                     eb2c5c319396b9c47339e32958da4cf4: !CameraComponent
-                        Id: a07a1204-9543-4870-8b9a-d089255bddb5
+                        Id: 6f31bfd0-c8b3-4bfa-9da0-442aa5453eeb
                         Name: null
                         Projection: Perspective
                         Slot: c3841467-a895-4ca2-84ef-4b873907f23d
+            Base:
+                BasePartAsset: 37f06626-4a2f-4f6e-a63d-720b98b71cf6:prefab/Player
+                BasePartId: cf1b7599-f3b7-4afa-a769-1c4824b52d19
+                InstanceId: 1f72664c-da88-4cc5-936b-260f581fba82
+        -   Entity:
+                Id: 8267f9e5-00e5-4caa-921e-6a00cb238298
+                Name: audioLight
+                Components:
+                    40c191c8cc65b0e10258b085a1c0e1f0: !TransformComponent
+                        Id: 4d2b3234-685e-4789-afcc-49f5a3acd257
+                        Position: {X: 0.0, Y: 2.0, Z: 0.0}
+                        Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                        Scale: {X: 1.0, Y: 1.0, Z: 1.0}
+                        Children: {}
+                    7e9448e6574d103be5c9ce27de6941e9: !LightComponent
+                        Id: 81f193bf-c847-40c3-9164-b6f37f7d5cde
+                        Type: !LightPoint
+                            Color: !ColorRgbProvider
+                                Value: {R: 0.63529414, G: 0.9137255, B: 0.9490196}
+                            Radius: 4.0
+                            Shadow:
+                                Size: Small
+                                BiasParameters: {}
+                        Intensity: 0.2
+            Base:
+                BasePartAsset: 9eb6404d-a826-426f-a2a7-b8bd7283e55a:prefab/audioCaller
+                BasePartId: 79833282-46b2-4141-b0bd-a3a7faf4b43d
+                InstanceId: 52e50c45-7eb4-4b7e-bdad-a1696ec4fafa
         -   Entity:
                 Id: 9eec5db4-46f6-4942-99a3-b92bec327571
                 Name: Point light
                 Components:
                     0ce0554556b86217cc4a9a1ecac99333: !TransformComponent
                         Id: 9e10e527-9d48-4ea4-b8a2-a4e26f0a20eb
-                        Position: {X: 0.0, Y: 1.5, Z: -0.7}
+                        Position: {X: 0.0, Y: 1.0, Z: -0.7}
                         Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
                         Scale: {X: 1.0, Y: 1.0, Z: 1.0}
                         Children: {}
                     58195f02aa6b6ea45bab30f1cee73bd5: !LightComponent
-                        Id: ca5fe44f-c108-4533-8060-80ec2414c18d
+                        Id: 40e3f486-c309-4d08-aa9a-ae0bde138473
                         Type: !LightPoint
                             Color: !ColorRgbProvider
                                 Value: {R: 1.0, G: 1.0, B: 1.0}
-                            Radius: 4.0
+                            Radius: 4.5
                             Shadow:
                                 Size: Small
                                 BiasParameters: {}
-                        Intensity: 0.4
+                        Intensity: 0.5
+            Base:
+                BasePartAsset: 37f06626-4a2f-4f6e-a63d-720b98b71cf6:prefab/Player
+                BasePartId: 5e36b41c-5a2b-4d8c-b99b-57489661c80a
+                InstanceId: 1f72664c-da88-4cc5-936b-260f581fba82
         -   Entity:
                 Id: a317b3a3-d576-4ccd-8ad9-f6c95927e3c5
                 Name: BatLight
                 Components:
                     fcdbff290d078378f1643870a231fb8f: !TransformComponent
                         Id: 46c32219-524b-4c66-9687-1d6e73608a92
-                        Position: {X: 0.0, Y: 0.5, Z: 4.5}
+                        Position: {X: 0.0, Y: 0.5, Z: 5.5}
                         Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
                         Scale: {X: 1.0, Y: 1.0, Z: 1.0}
                         Children: {}
                     522c3d8d76d89e63737423ffa7237348: !LightComponent
-                        Id: 439c4681-0eea-4b8e-893c-911d55f02915
+                        Id: a4cb225b-257e-4cf3-86fb-a3ff4195b98e
                         Type: !LightPoint
                             Color: !ColorRgbProvider
                                 Value: {R: 1.0, G: 1.0, B: 1.0}
-                            Radius: 16.0
+                            Radius: 20.0
                             Shadow:
                                 Size: Small
                                 BiasParameters: {}
-                        Intensity: 0.5
+                        Intensity: 0.8
+            Base:
+                BasePartAsset: 37f06626-4a2f-4f6e-a63d-720b98b71cf6:prefab/Player
+                BasePartId: f2c374d6-9717-4711-93d9-3df8172c653c
+                InstanceId: 1f72664c-da88-4cc5-936b-260f581fba82
+        -   Entity:
+                Id: a988c0bf-42aa-47a7-888f-d4e0318bf9f0
+                Name: Caller
+                Components:
+                    b323c1a341182d77b9dd6aa2606db50d: !TransformComponent
+                        Id: 67d2ac0f-00d0-4bf2-9bec-56be83387ed5
+                        Position: {X: 0.0, Y: 0.0, Z: 0.0}
+                        Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                        Scale: {X: 1.0, Y: 1.0, Z: 1.0}
+                        Children:
+                            4f266011b0dc4cb42e6c3f208539e5a7: ref!! ef7e4f4a-208a-4217-bcd8-8c716c57a56a
+        -   Entity:
+                Id: b2e9d3f1-712d-4801-8442-02e2ec2451e6
+                Name: cave
+                Components:
+                    a3fee9c5b05af5a77ec3960afe017891: !TransformComponent
+                        Id: a1315fec-1844-4432-97bc-c69424e75db3
+                        Position: {X: 0.0, Y: 0.0, Z: 0.0}
+                        Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                        Scale: {X: 2.0, Y: 2.0, Z: 2.0}
+                        Children: {}
+                    48e60d3a244648d8356b5bd679339b73: !ModelComponent
+                        Id: 0a571516-f9f3-43c5-88f4-5afe8edc88d5
+                        Model: b885b229-c585-4f74-abb1-00b115030d09:Models/cave
+                        Materials: {}
+                    e64429fe86afd83ce51a220c3f59c95a: !Stride.BepuPhysics.StaticComponent,Stride.BepuPhysics
+                        Id: d4b228be-49b4-4553-8239-7ec3d432a77a
+                        Collider: !Stride.BepuPhysics.Definitions.Colliders.MeshCollider,Stride.BepuPhysics
+                            Model: b885b229-c585-4f74-abb1-00b115030d09:Models/cave
+                            Mass: 1.0
+                            Closed: true
+                        SpringFrequency: 30.0
+                        SpringDampingRatio: 3.0
+                        FrictionCoefficient: 1.0
+                        MaximumRecoveryVelocity: 1000.0
+                        CollisionGroup: {}
+                        ContactEventHandler: null
         -   Entity:
                 Id: d277d1fb-5b16-4892-aeff-f2153e7e11aa
                 Name: Directional light
@@ -205,7 +448,7 @@ Hierarchy:
                     92a7186c35ff2a86debd008264ae790b: !TransformComponent
                         Id: 47555ac8-b114-45bb-b63f-32ab4fa80724
                         Position: {X: 0.0, Y: 2.0, Z: 0.0}
-                        Rotation: {X: 1.131334E-08, Y: -0.9659258, Z: -0.25881904, W: -4.222196E-08}
+                        Rotation: {X: -5.3385076E-08, Y: 0.70710677, Z: 0.70710677, W: 5.3385076E-08}
                         Scale: {X: 1.0, Y: 1.0, Z: 1.0}
                         Children: {}
                     8d3ad76e4f2e29fe2ff8bbc76ae97fe6: !LightComponent
@@ -234,3 +477,22 @@ Hierarchy:
                         Scale: {X: 1.0, Y: 1.0, Z: 1.0}
                         Children:
                             63f6c6649b760183ad80505465f0cb8c: ref!! 10ef3ad5-5674-4653-9c79-25f503b1b3d8
+            Base:
+                BasePartAsset: 37f06626-4a2f-4f6e-a63d-720b98b71cf6:prefab/Player
+                BasePartId: 8be698dc-46d2-49b8-942e-93f109e57064
+                InstanceId: 1f72664c-da88-4cc5-936b-260f581fba82
+        -   Entity:
+                Id: d767f57b-a3f9-42f0-8dc1-cf661d2d5209
+                Name: Wave
+                Components:
+                    dc1aaf0c5f692cb0a445d3761f4527ee: !TransformComponent
+                        Id: 4fb79279-4f92-498d-8357-0eaaecc317a5
+                        Position: {X: 0.0, Y: -0.45535812, Z: 0.0}
+                        Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                        Scale: {X: 1.0, Y: 1.0, Z: 1.0}
+                        Children:
+                            4754f7ef590197dacf129a6bfeafa7a2: ref!! 78798dd6-f223-4a64-b1ea-74ebe99d508d
+            Base:
+                BasePartAsset: 37f06626-4a2f-4f6e-a63d-720b98b71cf6:prefab/Player
+                BasePartId: e9c6f538-4b11-4e7d-91aa-a5dd1771be92
+                InstanceId: 1f72664c-da88-4cc5-936b-260f581fba82

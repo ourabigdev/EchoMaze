@@ -1,0 +1,8 @@
+!Texture
+Id: be3b27ef-4dad-4dac-b6c5-6fec1cd35c2d
+SerializedVersion: {Stride: 2.0.0.0}
+Tags: []
+Source: !file ../../Resources/Wing.png
+Type: !ColorTextureType
+    ColorKeyColor: {R: 255, G: 0, B: 255, A: 255}
+    PremultiplyAlpha: false

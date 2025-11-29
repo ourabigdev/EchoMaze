@@ -1,0 +1,7 @@
+!Texture
+Id: b5749e43-bc28-4764-b285-f24ec9f1bc84
+SerializedVersion: {Stride: 2.0.0.0}
+Tags: []
+Source: !file ../../Resources/Rock058_1K-JPG_Color.jpg
+Type: !ColorTextureType
+    ColorKeyColor: {R: 255, G: 0, B: 255, A: 255}

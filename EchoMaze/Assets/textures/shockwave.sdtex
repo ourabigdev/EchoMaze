@@ -1,0 +1,7 @@
+!Texture
+Id: f15ec937-9ec8-4489-b3b5-f5f7ad74a396
+SerializedVersion: {Stride: 2.0.0.0}
+Tags: []
+Source: !file ../../Resources/shockwave.png
+Type: !ColorTextureType
+    ColorKeyColor: {R: 255, G: 0, B: 255, A: 255}

@@ -1,0 +1,15 @@
+!Model
+Id: b885b229-c585-4f74-abb1-00b115030d09
+SerializedVersion: {Stride: 2.0.0.0}
+Tags: []
+Source: !file ../../Resources/cave.glb
+Skeleton: null
+PivotPosition: {X: 0.0, Y: 0.0, Z: 0.0}
+Materials:
+    93ba927629fdedcebff821ac19c88cbe:
+        Name: Material
+        MaterialInstance:
+            Material: b82cdc82-e477-41f7-bc98-073204c5790f:materials/Material
+Modifiers: {}
+~SourceHashes:
+    0dfdfd058f1c3845ad083a97a7f36010~../../Resources/cave.glb: 2e13f859b2c1b092af21a011fd22859e
