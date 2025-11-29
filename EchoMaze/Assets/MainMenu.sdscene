@@ -1,0 +1,98 @@
+!SceneAsset
+Id: 1b4167d9-11a0-4559-8e49-093d195d4e6a
+SerializedVersion: {Stride: 3.1.0.1}
+Tags: []
+ChildrenIds: []
+Offset: {X: 0.0, Y: 0.0, Z: 0.0}
+Hierarchy:
+    RootParts:
+        - ref!! 70f232fc-44b8-4408-8c87-16060fe6c225
+        - ref!! 365124f1-7f17-4ca1-a972-9e72d3cc1f25
+        - ref!! 3a9ee0c6-9550-4060-a335-70a920b4cd4f
+        - ref!! 5ac8c9cd-374e-428a-a8a3-cc1181671412
+        - ref!! 992e10d4-73da-4480-8fce-12a539366d21
+    Parts:
+        -   Entity:
+                Id: 365124f1-7f17-4ca1-a972-9e72d3cc1f25
+                Name: Directional light
+                Components:
+                    63ce196f76603746a9e972e8b2966e93: !TransformComponent
+                        Id: e4143b33-53cf-4721-ba6d-8e799a8cf1bc
+                        Position: {X: 0.0, Y: 2.0, Z: 0.0}
+                        Rotation: {X: -0.57357645, Y: 0.0, Z: 0.0, W: 0.81915206}
+                        Scale: {X: 1.0, Y: 1.0, Z: 1.0}
+                        Children: {}
+                    799269fa36bc4e5ceeddf573e566621a: !LightComponent
+                        Id: ae531c48-a4d4-42cf-b98c-f1d628355c23
+                        Type: !LightDirectional
+                            Color: !ColorRgbProvider
+                                Value: {R: 1.0, G: 1.0, B: 1.0}
+                            Shadow:
+                                Size: Large
+                                DepthRange: {}
+                                PartitionMode: !LightDirectionalShadowMap.PartitionLogarithmic {}
+                                ComputeTransmittance: false
+                                BiasParameters: {}
+                        Intensity: 0.0
+        -   Entity:
+                Id: 3a9ee0c6-9550-4060-a335-70a920b4cd4f
+                Name: Point light
+                Components:
+                    cf9594c3fe486e389b93e941d4590a95: !TransformComponent
+                        Id: 8c197304-473a-495a-95a4-70a8719589f9
+                        Position: {X: 0.0, Y: 0.06312372, Z: 0.0}
+                        Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                        Scale: {X: 1.0, Y: 1.0, Z: 1.0}
+                        Children: {}
+                    1d30875517a996e948c6fa9aa2c0aa77: !LightComponent
+                        Id: 54cdfafa-9608-4083-bcf6-0629e1bff8db
+                        Type: !LightPoint
+                            Color: !ColorRgbProvider
+                                Value: {R: 1.0, G: 1.0, B: 1.0}
+                            Radius: 30.0
+                            Shadow:
+                                Size: Small
+                                BiasParameters: {}
+        -   Entity:
+                Id: 5ac8c9cd-374e-428a-a8a3-cc1181671412
+                Name: Camera
+                Components:
+                    e53f6d6e18b5871e5f70c79e641753ef: !TransformComponent
+                        Id: 69ba9306-c580-4383-a78a-b90887ee2336
+                        Position: {X: 0.0, Y: 0.47385788, Z: 1.8036311}
+                        Rotation: {X: -0.15287453, Y: 0.0, Z: 0.0, W: 0.9882456}
+                        Scale: {X: 1.0, Y: 1.0, Z: 1.0}
+                        Children: {}
+                    e1dec1743d3db6af2986a1896ae133d6: !CameraComponent
+                        Id: 7754ccc7-0124-4d38-b8c6-92e8d968ac62
+                        Name: null
+                        Projection: Perspective
+                        Slot: c3841467-a895-4ca2-84ef-4b873907f23d
+        -   Entity:
+                Id: 70f232fc-44b8-4408-8c87-16060fe6c225
+                Name: cave
+                Components:
+                    99f70f025701c21db5f04d2834b8a194: !TransformComponent
+                        Id: 2b53f987-eadc-4cc2-85dc-2b92c97498fb
+                        Position: {X: 0.0, Y: 0.0, Z: 0.0}
+                        Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                        Scale: {X: 1.0, Y: 1.0, Z: 1.0}
+                        Children: {}
+                    d63fa05650a05fb601f717c49e405924: !ModelComponent
+                        Id: 78ad98d6-ff32-4839-801f-ae7746adf2ee
+                        Model: b885b229-c585-4f74-abb1-00b115030d09:Models/cave
+                        Materials: {}
+        -   Entity:
+                Id: 992e10d4-73da-4480-8fce-12a539366d21
+                Name: bat
+                Components:
+                    b9696e6d82f8b8b0cdc9bab3dc4d6be5: !TransformComponent
+                        Id: 2bc4d066-767d-4c80-959c-69069790cab4
+                        Position: {X: -0.9832123, Y: -0.29815647, Z: -0.38348055}
+                        Rotation: {X: 0.0, Y: 0.3309688, Z: 0.0, W: 0.94364166}
+                        Scale: {X: 0.05, Y: 0.05, Z: 0.05}
+                        Children: {}
+                    c5911aaebd3102b38093b5fb6a81ee21: !ModelComponent
+                        Id: a8a581de-c550-4816-a253-b881b3a6433c
+                        Model: 528a919c-4369-43ac-8728-6f7ea6d42005:Models/bat
+                        Materials: {}

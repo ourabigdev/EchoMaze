@@ -1,0 +1,70 @@
+!UIPageAsset
+Id: 0705a17c-a5f6-4326-8019-421b52399e0f
+SerializedVersion: {Stride: 2.1.0.1}
+Tags: []
+Design:
+    Resolution: {X: 1280.0, Y: 720.0, Z: 1000.0}
+Hierarchy:
+    RootParts:
+        - !Grid ref!! ae72c32d-434c-49ab-a4b7-48e70643418e
+    Parts:
+        -   UIElement: !TextBlock
+                Id: 49074f44-05d2-4635-b43e-6b97c077f958
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Width: 1280.0
+                Height: 172.0
+                VerticalAlignment: Top
+                Margin: {}
+                Name: Title
+                Text: EchoMaze
+                Font: 2e57a256-6178-4a35-9803-c9733b1b83bc:UI/Font
+                TextSize: 100.0
+                TextColor: {R: 240, G: 240, B: 240, A: 255}
+                OutlineColor: {R: 0, G: 0, B: 0, A: 255}
+                OutlineThickness: 2.0
+                TextAlignment: Center
+        -   UIElement: !Button
+                Id: 6bbd708d-07d5-434e-866d-129bfaa75372
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                DrawLayerNumber: 2
+                Width: 258.0
+                Height: 95.0
+                VerticalAlignment: Bottom
+                Margin: {Left: 488.0, Right: 534.0, Bottom: 255.0}
+                Name: Start
+                Content: !TextBlock ref!! ade0edd4-8438-4afd-80bd-16305af707f0
+                PressedImage: !SpriteFromSheet
+                    Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
+                    CurrentFrame: 2
+                NotPressedImage: !SpriteFromSheet
+                    Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
+                    CurrentFrame: 1
+                MouseOverImage: !SpriteFromSheet
+                    Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
+                Color: {R: 255, G: 255, B: 255, A: 255}
+        -   UIElement: !TextBlock
+                Id: ade0edd4-8438-4afd-80bd-16305af707f0
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                HorizontalAlignment: Center
+                VerticalAlignment: Center
+                Margin: {}
+                Text: Start
+                Font: c90f3988-0544-4cbe-993f-13af7d9c23c6:StrideDefaultFont
+                TextSize: 50.0
+                TextColor: {R: 240, G: 240, B: 240, A: 255}
+                OutlineColor: {R: 0, G: 36, B: 44, A: 255}
+                OutlineThickness: 2.0
+        -   UIElement: !Grid
+                Id: ae72c32d-434c-49ab-a4b7-48e70643418e
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Margin: {}
+                Children:
+                    f79db096970aa258204e00f06bd389ef: !TextBlock ref!! 49074f44-05d2-4635-b43e-6b97c077f958
+                    1dc66b2439fee780a188514cedbcc068: !Button ref!! 6bbd708d-07d5-434e-866d-129bfaa75372
+                RowDefinitions: {}
+                ColumnDefinitions: {}
+                LayerDefinitions: {}

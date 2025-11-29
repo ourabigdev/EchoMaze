@@ -65,7 +65,7 @@ public class CharacterMovement : SyncScript
         CaveSoundEffect = Content.Load<Sound>("sound and music/ambient-sound-1-17076");
         caveSound = CaveSoundEffect.CreateInstance();
         caveSound.IsLooping = true;
-        caveSound.Volume = 0.025f;
+        caveSound.Volume = 0.01f;
 
 
         //implement

@@ -39,11 +39,11 @@ Hierarchy:
                         Type: !LightPoint
                             Color: !ColorRgbProvider
                                 Value: {R: 1.0, G: 1.0, B: 1.0}
-                            Radius: 4.5
+                            Radius: 4.7
                             Shadow:
                                 Size: Small
                                 BiasParameters: {}
-                        Intensity: 0.5
+                        Intensity: 0.6
         -   Entity:
                 Id: 7405023d-e7fc-4b37-83b3-ee9ef63c1eba
                 Name: ThirdPersonPivot
@@ -251,6 +251,7 @@ Hierarchy:
                         Id: 1f81fe25-ffb2-43e2-9f3f-7468efb70f55
                         Name: null
                         Projection: Perspective
+                        VerticalFieldOfView: 52.0
                         Slot: c3841467-a895-4ca2-84ef-4b873907f23d
         -   Entity:
                 Id: e9c6f538-4b11-4e7d-91aa-a5dd1771be92
@@ -278,8 +279,7 @@ Hierarchy:
                         Type: !LightPoint
                             Color: !ColorRgbProvider
                                 Value: {R: 1.0, G: 1.0, B: 1.0}
-                            Radius: 20.0
+                            Radius: 30.0
                             Shadow:
                                 Size: Small
                                 BiasParameters: {}
-                        Intensity: 0.8

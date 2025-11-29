@@ -11,6 +11,7 @@ Hierarchy:
         - ref!! 57342d7a-7a99-4a03-ba9f-7b7217083bda
         - ref!! 2e5ab9ac-63a3-4b5c-bee7-16bdfbf48cf0
         - ref!! a988c0bf-42aa-47a7-888f-d4e0318bf9f0
+        - ref!! ef8976e6-089d-43e4-b59f-108883c91a09
     Parts:
         -   Entity:
                 Id: 0c22ac43-aa09-4289-b60e-45c1ad5a9c63
@@ -327,6 +328,7 @@ Hierarchy:
                         Id: 6f31bfd0-c8b3-4bfa-9da0-442aa5453eeb
                         Name: null
                         Projection: Perspective
+                        VerticalFieldOfView: 52.0
                         Slot: c3841467-a895-4ca2-84ef-4b873907f23d
             Base:
                 BasePartAsset: 37f06626-4a2f-4f6e-a63d-720b98b71cf6:prefab/Player
@@ -371,11 +373,11 @@ Hierarchy:
                         Type: !LightPoint
                             Color: !ColorRgbProvider
                                 Value: {R: 1.0, G: 1.0, B: 1.0}
-                            Radius: 4.5
+                            Radius: 4.7
                             Shadow:
                                 Size: Small
                                 BiasParameters: {}
-                        Intensity: 0.5
+                        Intensity: 0.6
             Base:
                 BasePartAsset: 37f06626-4a2f-4f6e-a63d-720b98b71cf6:prefab/Player
                 BasePartId: 5e36b41c-5a2b-4d8c-b99b-57489661c80a
@@ -395,11 +397,10 @@ Hierarchy:
                         Type: !LightPoint
                             Color: !ColorRgbProvider
                                 Value: {R: 1.0, G: 1.0, B: 1.0}
-                            Radius: 20.0
+                            Radius: 30.0
                             Shadow:
                                 Size: Small
                                 BiasParameters: {}
-                        Intensity: 0.8
             Base:
                 BasePartAsset: 37f06626-4a2f-4f6e-a63d-720b98b71cf6:prefab/Player
                 BasePartId: f2c374d6-9717-4711-93d9-3df8172c653c
@@ -496,3 +497,18 @@ Hierarchy:
                 BasePartAsset: 37f06626-4a2f-4f6e-a63d-720b98b71cf6:prefab/Player
                 BasePartId: e9c6f538-4b11-4e7d-91aa-a5dd1771be92
                 InstanceId: 1f72664c-da88-4cc5-936b-260f581fba82
+        -   Entity:
+                Id: ef8976e6-089d-43e4-b59f-108883c91a09
+                Name: Game
+                Components:
+                    2d538678fd0bed444d17097ec86f7722: !TransformComponent
+                        Id: 65b33cd7-67fc-4cc7-b8d9-8eb6f3877b44
+                        Position: {X: 0.0, Y: 0.0, Z: 0.0}
+                        Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                        Scale: {X: 1.0, Y: 1.0, Z: 1.0}
+                        Children: {}
+                    05316fc98b5638be4a9443bfe9b19e9a: !UIComponent
+                        Id: ddd11f63-6514-4dc4-b0b3-59d8cc76dbe3
+                        Page: df8ff225-10c5-4ad7-8db7-b2e60f36830a:UI/Game
+                        Resolution: {X: 1280.0, Y: 720.0, Z: 1000.0}
+                        Size: {X: 1.28, Y: 0.72, Z: 1.0}

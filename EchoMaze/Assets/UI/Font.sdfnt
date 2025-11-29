@@ -1,0 +1,12 @@
+!SpriteFont
+Id: 2e57a256-6178-4a35-9803-c9733b1b83bc
+SerializedVersion: {Stride: 2.0.0.0}
+Tags: []
+FontSource: !FileFontProvider
+    Source: !file ../../Resources/Cinzel/Cinzel-VariableFont_wght.ttf
+FontType: !SignedDistanceFieldSpriteFontType
+    CharacterSet: null
+    CharacterRegions:
+        274499c9d16717b99a696d936b6cab61:
+            Start: ' '
+            End: "\x7F"

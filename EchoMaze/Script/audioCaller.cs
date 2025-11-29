@@ -54,7 +54,7 @@ public class audioCaller : SyncScript
 
         controller.IsLooping = true;   // loop forever
         controller.Pitch = 2.0f;        // normal pitch
-        controller.Volume = 1.5f;      // adjust as needed
+        controller.Volume = 2f;      // adjust as needed
         controller.Play();            // plays once at game start
     }
 
