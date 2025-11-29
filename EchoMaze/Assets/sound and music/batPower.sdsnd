@@ -1,0 +1,8 @@
+!Sound
+Id: 2c0cc3ec-1293-4f85-aae2-dcf95a6f8f50
+SerializedVersion: {Stride: 2.0.0.0}
+Tags: []
+Source: !file ../../Resources/sounds and music/batPower.wav
+CompressionRatio: 15
+StreamFromDisk: false
+Spatialized: false

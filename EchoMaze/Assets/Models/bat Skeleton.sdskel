@@ -1,0 +1,46 @@
+!Skeleton
+Id: 594f5ca1-fe04-4ca6-ac2a-be64086d0e28
+SerializedVersion: {Stride: 2.0.0.0}
+Tags: []
+Source: !file ../../Resources/bat.fbx
+PivotPosition: {X: 0.0, Y: 0.0, Z: 0.0}
+Nodes:
+    e7101b1caab270b357f76ffd69c5490f: {Name: RootNode, Depth: 0}
+    789e54892c671b303e38600228e053fc: {Name: Armature, Depth: 1}
+    8039884f5061c40510d8a813f1a289f3: {Name: Spine, Depth: 2}
+    c32c4646ca11c8ca18c2f8b3fa377b63: {Name: Head, Depth: 3}
+    5b245089486979205042517741a73395: {Name: Head_end, Depth: 4}
+    f4759eff9174a5d7ce097790c8fa7ba6: {Name: Head_end_end, Depth: 5}
+    acb9911746894f47e81b22576d7d7e80: {Name: Wing.L.001, Depth: 3}
+    bb26a935f2464b5d215872fb08f78cd4: {Name: Wing.L.002, Depth: 4}
+    c4d47f483334ffe5bf1743f783fb795b: {Name: Wing.L.003, Depth: 5}
+    1ee0baf6fedba890f1c5908647927d00: {Name: Wing.L.003_end, Depth: 6}
+    50be3e9c74f37a07059a3a530c66a0ec: {Name: Wing.L.003_end_end, Depth: 7}
+    ac6871496bcb2aadbd74411af887204f: {Name: Wing.L.006, Depth: 5}
+    1d002305b9b48f56bdea30b5b35789ca: {Name: Wing.L.007, Depth: 6}
+    b3decfc369bd334f1eecceb5febbcac2: {Name: Wing.L.007_end, Depth: 7}
+    9c4db1f50a2a4c46cf4cedc68212bca0: {Name: Wing.L.007_end_end, Depth: 8}
+    e5e75c7a072074bb195bff86be752e34: {Name: Wing.L.004, Depth: 4}
+    13348adc583861df1d35d9b0efaf46fc: {Name: Wing.L.005, Depth: 5}
+    21823174f1ff89309ac3c5f8f66f440c: {Name: Wing.L.005_end, Depth: 6}
+    e53b131f87238473e3b957faca2b0c7e: {Name: Wing.L.005_end_end, Depth: 7}
+    e883deee78bedb20860a248295084c79: {Name: Body.01, Depth: 3}
+    184480a65e725dc124121490acdb870b: {Name: Body.02, Depth: 4}
+    a7ea4d8f3993852156ffd5652682eac0: {Name: Body.02_end, Depth: 5}
+    7fbe84ad67262fa259184cbc3c2c5777: {Name: Body.02_end_end, Depth: 6}
+    ae7e0307478ab23feeca09b925a26bcf: {Name: Wing.R.001, Depth: 3}
+    cb5ebcc2c97d06d1e2d27cf7421fe6ee: {Name: Wing.R.002, Depth: 4}
+    7f14ff8b86e2f5ba14c405941482677e: {Name: Wing.R.003, Depth: 5}
+    7df6ea3827303a20c0a432801a278324: {Name: Wing.R.003_end, Depth: 6}
+    05f7232d6b7ea1db4557f00e0d9b3735: {Name: Wing.R.003_end_end, Depth: 7}
+    d0a4bd2efa9e7da4cceede7db07e5ff5: {Name: Wing.R.006, Depth: 5}
+    fe3c8612e44bba1818e62bb2ebc7de25: {Name: Wing.R.007, Depth: 6}
+    c66635fb6177519442be8573f266a153: {Name: Wing.R.007_end, Depth: 7}
+    6e3547fa782ea953a0408b47b550c481: {Name: Wing.R.007_end_end, Depth: 8}
+    a4ee0f5c853559304cfb1e3467954554: {Name: Wing.R.004, Depth: 4}
+    a506deb8cd1fac6100aedb0431bfb1c8: {Name: Wing.R.005, Depth: 5}
+    8fb9e3ae86eb85e84839fdf4657f411d: {Name: Wing.R.005_end, Depth: 6}
+    d8e071d887bd802b0a2aaeb3fb726f59: {Name: Wing.R.005_end_end, Depth: 7}
+    a1ea08bfc25adf628fcfc1092eafee32: {Name: Bat_Body, Depth: 1}
+~SourceHashes:
+    1ca64d5f327e0a336f69e3e15bce8a7a~../../Resources/bat.fbx: c9dd2d8bdbd91581d86d9414b29e49ef

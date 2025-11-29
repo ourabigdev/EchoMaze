@@ -1,0 +1,7 @@
+!Texture
+Id: b9185706-c46e-4bdb-86ca-2e9fbaa79a88
+SerializedVersion: {Stride: 2.0.0.0}
+Tags: []
+Source: !file ../../../../../Programs/Total_Editor_3.2.1_Win64/release/assets/textures/tiles/concrete.png
+Type: !ColorTextureType
+    ColorKeyColor: {R: 255, G: 0, B: 255, A: 255}

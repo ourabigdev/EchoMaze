@@ -1,0 +1,30 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 18
+VisualStudioVersion = 18.0.11222.15 d18.0
+MinimumVisualStudioVersion = 16.0.0.0
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EchoMaze.Windows", "EchoMaze.Windows\EchoMaze.Windows.csproj", "{A3E6EF09-C7F0-4011-BFD3-5266611D028C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EchoMaze", "EchoMaze\EchoMaze.csproj", "{05BDFAE8-3D0B-4D5D-94D3-E6EE23B8C520}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A3E6EF09-C7F0-4011-BFD3-5266611D028C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3E6EF09-C7F0-4011-BFD3-5266611D028C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3E6EF09-C7F0-4011-BFD3-5266611D028C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3E6EF09-C7F0-4011-BFD3-5266611D028C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{05BDFAE8-3D0B-4D5D-94D3-E6EE23B8C520}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05BDFAE8-3D0B-4D5D-94D3-E6EE23B8C520}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05BDFAE8-3D0B-4D5D-94D3-E6EE23B8C520}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05BDFAE8-3D0B-4D5D-94D3-E6EE23B8C520}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C65B58D8-4C4C-4632-9ED6-F5F7449831B8}
+	EndGlobalSection
+EndGlobal

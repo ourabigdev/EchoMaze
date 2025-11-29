@@ -1,0 +1,23 @@
+!Model
+Id: 108ddb9e-69d0-41df-b4b8-d5fad3b3138d
+SerializedVersion: {Stride: 2.0.0.0}
+Tags: []
+Source: !file ../../Resources/map.gltf
+Skeleton: null
+PivotPosition: {X: 0.0, Y: 0.0, Z: 0.0}
+Materials:
+    1caba0c450219507c628ccab2b6259f0:
+        Name: .._.._.._.._Programs_Total_Editor_3.2.1_Win64_release_assets_textures_tiles_brickwall.png
+        MaterialInstance:
+            Material: 1648c2fd-5a69-4a1a-88cb-b29cfcd423f0:materials/.._.._.._.._Programs_Total_Editor_3.2.1_Win64_release_assets_textures_tiles_brickwall.png
+    bc9d3b7eeb17489107e5b3a964a99a1d:
+        Name: .._.._.._.._Programs_Total_Editor_3.2.1_Win64_release_assets_textures_tiles_darkfloor.png
+        MaterialInstance:
+            Material: 3ac0cdc0-ba39-4a6b-986e-1126b40f2b13:materials/.._.._.._.._Programs_Total_Editor_3.2.1_Win64_release_assets_textures_tiles_darkfloor.png
+    51c2a7e222feb9fd3b6c29678da72fac:
+        Name: .._.._.._.._Programs_Total_Editor_3.2.1_Win64_release_assets_textures_tiles_concrete.png
+        MaterialInstance:
+            Material: c7587fd5-0c24-49de-b65a-019784aa9e23:materials/.._.._.._.._Programs_Total_Editor_3.2.1_Win64_release_assets_textures_tiles_concrete.png
+Modifiers: {}
+~SourceHashes:
+    1656725b8bf3ce088831a93d0b393c44~../../Resources/map.gltf: 688b3efeebddf3081393cf560e282944

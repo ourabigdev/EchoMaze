@@ -1,0 +1,19 @@
+!Model
+Id: 528a919c-4369-43ac-8728-6f7ea6d42005
+SerializedVersion: {Stride: 2.0.0.0}
+Tags: []
+Source: !file ../../Resources/bat.fbx
+Skeleton: 594f5ca1-fe04-4ca6-ac2a-be64086d0e28:Models/bat Skeleton
+PivotPosition: {X: 0.0, Y: 0.0, Z: 0.0}
+Materials:
+    c8b43a4459ff4585df646d6459fedcb2:
+        Name: Mor_all
+        MaterialInstance:
+            Material: 2ee52caf-50e5-449d-a1e9-3618b9058b66:materials/Mor_all
+    b8b23b8baa0dc3ab0440da3c63b69279:
+        Name: Mor_asa
+        MaterialInstance:
+            Material: 57b62664-e06b-40a1-b2d9-e910e82ada9c:materials/Mor_asa
+Modifiers: {}
+~SourceHashes:
+    7f68dab3c205e618b1a3d00f1f31ca51~../../Resources/bat.fbx: c9dd2d8bdbd91581d86d9414b29e49ef

@@ -1,0 +1,7 @@
+!Texture
+Id: 529cb323-0c7b-4ebb-a056-ac1fe2ddd2f2
+SerializedVersion: {Stride: 2.0.0.0}
+Tags: []
+Source: !file ../../../../../Programs/Total_Editor_3.2.1_Win64/release/assets/textures/tiles/brickwall.png
+Type: !ColorTextureType
+    ColorKeyColor: {R: 255, G: 0, B: 255, A: 255}

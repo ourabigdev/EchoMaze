@@ -1,0 +1,20 @@
+!Animation
+Id: 295e7e65-3453-4f34-9851-dc5ca03f3413
+SerializedVersion: {Stride: 2.0.0.0}
+Tags: []
+Source: !file ../../Resources/bat.fbx
+AnimationStack: 0
+ClipDuration:
+    Enabled: false
+    StartAnimationTime: 0:00:00:00.0000000
+    EndAnimationTime: 0:00:30:00.0000000
+PivotPosition: {X: 0.0, Y: 0.0, Z: 0.0}
+RepeatMode: LoopInfinite
+Type: !StandardAnimationAssetType {}
+Skeleton: 594f5ca1-fe04-4ca6-ac2a-be64086d0e28:Models/bat Skeleton
+RootMotion: false
+PreviewModel: 528a919c-4369-43ac-8728-6f7ea6d42005:Models/bat
+AnimationTimeMinimum: 0:00:00:00.0000000
+AnimationTimeMaximum: 0:00:00:00.5833300
+~SourceHashes:
+    25ac5987788883ef2550a641d6d47959~../../Resources/bat.fbx: c9dd2d8bdbd91581d86d9414b29e49ef

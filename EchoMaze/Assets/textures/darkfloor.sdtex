@@ -1,0 +1,7 @@
+!Texture
+Id: 131569a4-bef8-4938-99ef-b038007b9db3
+SerializedVersion: {Stride: 2.0.0.0}
+Tags: []
+Source: !file ../../../../../Programs/Total_Editor_3.2.1_Win64/release/assets/textures/tiles/darkfloor.png
+Type: !ColorTextureType
+    ColorKeyColor: {R: 255, G: 0, B: 255, A: 255}
