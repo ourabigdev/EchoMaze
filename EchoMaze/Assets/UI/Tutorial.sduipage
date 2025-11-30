@@ -1,0 +1,66 @@
+!UIPageAsset
+Id: 101faadd-2e50-4901-b391-d2fc228f0612
+SerializedVersion: {Stride: 2.1.0.1}
+Tags: []
+Design:
+    Resolution: {X: 1280.0, Y: 720.0, Z: 1000.0}
+Hierarchy:
+    RootParts:
+        - !Grid ref!! 159a104d-7e1e-4840-a64d-a5c55d7ffd0a
+    Parts:
+        -   UIElement: !Grid
+                Id: 159a104d-7e1e-4840-a64d-a5c55d7ffd0a
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Margin: {}
+                Children:
+                    6910ae8ef143ccc199e10ebe05fdfc47: !ImageElement ref!! 919437bf-3c0e-4e23-b386-0957df3dc8af
+                    1d7dc8680569428e7327292bdc42e0a4: !Button ref!! 330ccf06-8500-4a2e-8ae1-a1af07227dc8
+                RowDefinitions: {}
+                ColumnDefinitions: {}
+                LayerDefinitions: {}
+        -   UIElement: !TextBlock
+                Id: 253185f0-2c1d-46c5-aa66-7d4afe507dc8
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                HorizontalAlignment: Center
+                VerticalAlignment: Center
+                Margin: {}
+                Text: Start Game
+                Font: 2e57a256-6178-4a35-9803-c9733b1b83bc:UI/Font
+                TextSize: 30.0
+                TextColor: {R: 240, G: 240, B: 240, A: 255}
+                OutlineColor: {R: 0, G: 0, B: 0, A: 255}
+                OutlineThickness: 1.0
+        -   UIElement: !Button
+                Id: 330ccf06-8500-4a2e-8ae1-a1af07227dc8
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                DrawLayerNumber: 2
+                Width: 215.0
+                Height: 100.0
+                HorizontalAlignment: Right
+                VerticalAlignment: Bottom
+                Margin: {}
+                Name: Start
+                Content: !TextBlock ref!! 253185f0-2c1d-46c5-aa66-7d4afe507dc8
+                PressedImage: !SpriteFromSheet
+                    Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
+                    CurrentFrame: 2
+                NotPressedImage: !SpriteFromSheet
+                    Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
+                    CurrentFrame: 1
+                MouseOverImage: !SpriteFromSheet
+                    Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
+                Color: {R: 255, G: 255, B: 255, A: 255}
+        -   UIElement: !ImageElement
+                Id: 919437bf-3c0e-4e23-b386-0957df3dc8af
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Width: 798.4449
+                Height: 669.33466
+                Margin: {Left: 241.77725, Top: 20.376678, Right: 239.77783, Bottom: 30.288696}
+                Source: !SpriteFromTexture
+                    Texture: 16a4c10a-cfb9-4922-991e-ae0fa79fa626:textures/Movement
+                    Center: {X: 0.0, Y: 0.0}
+                Color: {R: 255, G: 255, B: 255, A: 255}

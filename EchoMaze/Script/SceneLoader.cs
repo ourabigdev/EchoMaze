@@ -17,6 +17,8 @@ public class SceneLoader : SyncScript
 {
     private Scene Load;
     private Entity uiEntity;
+    private Entity uiTutorial;
+    private UIComponent TutorialComponent;
     private UIComponent uiComponent;
 
     // Persist receivers as fields so they keep registered state across frames.
@@ -26,9 +28,12 @@ public class SceneLoader : SyncScript
     public override void Start()
     {
         Load = Entity.Scene;
-        // Initialize receivers once here (not every Update).
         winReceiver = new EventReceiver(EchoCollector.winEvent);
         winReceiverData = new EventReceiver<string>(EchoCollector.winEventData);
+
+        uiTutorial = Entity.FindChild("Tutorial");
+        TutorialComponent = uiTutorial.Get<UIComponent>();
+
 
         LoadMenu();
     }
@@ -45,6 +50,11 @@ public class SceneLoader : SyncScript
 
     private void ButtonClickedEvent(object sender, Stride.UI.Events.RoutedEventArgs e)
     {
+        LoadTutorial();
+    }
+
+    private void TutorialButtonClickedEvent(object sender, Stride.UI.Events.RoutedEventArgs e)
+    {
         LoadLevel();
     }
 
@@ -54,6 +64,8 @@ public class SceneLoader : SyncScript
         foreach (var child in Load.Children.ToList())
             child.Parent = null;
         Load.Children.Clear();
+
+        TutorialComponent.Enabled = false;
 
         // Load new menu
         var menuScene = Content.Load<Scene>("MainMenu");
@@ -79,6 +91,21 @@ public class SceneLoader : SyncScript
         // Unlock mouse for menu
         Input.UnlockMousePosition();
     }
+    private void LoadTutorial()
+    {
+        
+
+        TutorialComponent.Enabled = true;
+
+        var button = TutorialComponent.Page.RootElement.FindVisualChildOfType<Button>("Start");
+        if (button != null)
+        {
+            button.Click -= TutorialButtonClickedEvent;
+            button.Click += TutorialButtonClickedEvent;
+        }
+
+        uiComponent.Enabled = false;
+    }
 
     private void LoadLevel()
     {
@@ -86,7 +113,7 @@ public class SceneLoader : SyncScript
             child.Parent = null;
         Load.Children.Clear();
 
-        uiComponent.Enabled = false;
+        TutorialComponent.Enabled = false;
 
         var levelScene = Content.Load<Scene>("MainScene");
         Load.Children.Add(levelScene);
