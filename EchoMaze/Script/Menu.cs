@@ -1,5 +1,4 @@
-﻿// Menu.cs (replace your current Menu script with this)
-using Stride.Core.Mathematics;
+﻿using Stride.Core.Mathematics;
 using Stride.Engine;
 using Stride.Input;
 using Stride.UI;
