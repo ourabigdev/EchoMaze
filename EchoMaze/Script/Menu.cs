@@ -27,35 +27,18 @@ namespace EchoMaze.Script
         {
             // Find Menu UI entity and component
             uiEntity = Entity.FindChild("Menu");
-            if (uiEntity != null)
-                uiComponent = uiEntity.Get<UIComponent>();
+            uiComponent = uiEntity?.Get<UIComponent>();
 
-            // Find Tutorial UI entity and component
+            // Re-find Tutorial UI entity and component each time
             uiTutorial = Entity.FindChild("Tutorial");
-            if (uiTutorial != null)
-                TutorialComponent = uiTutorial.Get<UIComponent>();
+            TutorialComponent = uiTutorial?.Get<UIComponent>();
 
             // Ensure tutorial is hidden at start
             if (TutorialComponent != null)
                 TutorialComponent.Enabled = false;
 
-            // Wire menu UI
+            // Always re-hook buttons
             LoadMenu();
-        }
-
-        public override void Cancel()
-        {
-            // Unhook to avoid duplicate subscriptions when scene reloads/unloads
-            if (menuStartButton != null)
-            {
-                menuStartButton.Click -= OnMenuStartClicked;
-                menuStartButton = null;
-            }
-            if (tutorialPlayButton != null)
-            {
-                tutorialPlayButton.Click -= OnTutorialPlayClicked;
-                tutorialPlayButton = null;
-            }
         }
 
         // called when pressing Start in Menu
@@ -77,39 +60,28 @@ namespace EchoMaze.Script
 
         private void LoadMenu()
         {
-            // Make sure we have the menu UI component
             if (uiComponent == null) return;
 
-            // Ensure tutorial is disabled (extra safety)
-            if (TutorialComponent != null) TutorialComponent.Enabled = false;
-
-            // Enable menu UI
+            // Enable menu
             uiComponent.Enabled = true;
 
-            // Unhook previous menu button if any
-            if (menuStartButton != null)
-            {
-                menuStartButton.Click -= OnMenuStartClicked;
-                menuStartButton = null;
-            }
+            // Disable tutorial
+            if (TutorialComponent != null)
+                TutorialComponent.Enabled = false;
 
-            // Find and wire Start button inside this menu UI ONLY (search inside menu UI component)
+            // Re-find Start button
             var startBtn = uiComponent.Page.RootElement.FindVisualChildOfType<Button>(MENU_START_NAME);
             if (startBtn != null)
             {
-                startBtn.Click -= OnMenuStartClicked; // safe unsubscribe
+                startBtn.Click -= OnMenuStartClicked;
                 startBtn.Click += OnMenuStartClicked;
                 menuStartButton = startBtn;
             }
 
-            // Make sure tutorial play button is unhooked (we will re-hook when tutorial opens)
-            if (tutorialPlayButton != null)
-            {
-                tutorialPlayButton.Click -= OnTutorialPlayClicked;
-                tutorialPlayButton = null;
-            }
+            // Clear tutorial button reference (we will re-hook when showing tutorial)
+            tutorialPlayButton = null;
 
-            // Unlock mouse and show cursor for menu
+            // Unlock mouse
             Input.UnlockMousePosition();
             Game.IsMouseVisible = true;
         }
@@ -121,21 +93,14 @@ namespace EchoMaze.Script
             // Hide menu
             if (uiComponent != null) uiComponent.Enabled = false;
 
-            // Enable tutorial UI
+            // Enable tutorial
             TutorialComponent.Enabled = true;
 
-            // Unhook old tutorial button if any
-            if (tutorialPlayButton != null)
-            {
-                tutorialPlayButton.Click -= OnTutorialPlayClicked;
-                tutorialPlayButton = null;
-            }
-
-            // Find the Play button inside the Tutorial UI component (search inside tutorial UI)
+            // Re-find Play button
             var playBtn = TutorialComponent.Page.RootElement.FindVisualChildOfType<Button>(TUTORIAL_PLAY_NAME);
             if (playBtn != null)
             {
-                playBtn.Click -= OnTutorialPlayClicked; // safe unsubscribe then subscribe
+                playBtn.Click -= OnTutorialPlayClicked;
                 playBtn.Click += OnTutorialPlayClicked;
                 tutorialPlayButton = playBtn;
             }
