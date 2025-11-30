@@ -24,10 +24,6 @@ Hierarchy:
                         Scale: {X: 1.0, Y: 1.0, Z: 1.0}
                         Children:
                             e269af3c9af9bb8a6d3d17764c58c0cc: ref!! 721e3eca-3f7f-4e6a-9893-31e5159cc4a4
-            Base:
-                BasePartAsset: 37f06626-4a2f-4f6e-a63d-720b98b71cf6:prefab/Player
-                BasePartId: 7405023d-e7fc-4b37-83b3-ee9ef63c1eba
-                InstanceId: 1f72664c-da88-4cc5-936b-260f581fba82
         -   Entity:
                 Id: 21d772fe-49db-4569-a91c-c780b537b9ab
                 Name: Skybox
@@ -64,10 +60,6 @@ Hierarchy:
                         Id: 41f14eae-d994-490b-949f-322ff25ad5ff
                         Animations:
                             47233d3bbb4004e6fa4f9f7e9c6c00c6~flap: 295e7e65-3453-4f34-9851-dc5ca03f3413:Models/bat_Armature_Armature_ArmatureAction
-            Base:
-                BasePartAsset: 37f06626-4a2f-4f6e-a63d-720b98b71cf6:prefab/Player
-                BasePartId: 1c857988-5375-4cac-9db4-3d06ccf10a48
-                InstanceId: 1f72664c-da88-4cc5-936b-260f581fba82
         -   Entity:
                 Id: 2e5ab9ac-63a3-4b5c-bee7-16bdfbf48cf0
                 Name: Player
@@ -119,17 +111,13 @@ Hierarchy:
                         JumpForce: 10.0
                     f294563699d65576ba29a019b872c0eb: !AudioListenerComponent
                         Id: e2d6217c-22e6-459a-8a0d-9f40688b7407
-            Base:
-                BasePartAsset: 37f06626-4a2f-4f6e-a63d-720b98b71cf6:prefab/Player
-                BasePartId: 80e8b9c9-ca20-424c-bd4b-552e1a37e694
-                InstanceId: 1f72664c-da88-4cc5-936b-260f581fba82
         -   Entity:
                 Id: 35b43152-1639-4ac8-a837-58c516a48a3b
                 Name: audioCaller
                 Components:
                     114f78244d6b3c82144e5bfe1e0d22b7: !TransformComponent
                         Id: ef7e4f4a-208a-4217-bcd8-8c716c57a56a
-                        Position*: {X: 55.835396, Y: -1.7293398, Z: -68.58617}
+                        Position*: {X: 116.89707, Y: -2.800267, Z: -69.08919}
                         Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
                         Scale: {X: 0.5, Y: 0.5, Z: 0.5}
                         Children:
@@ -159,10 +147,6 @@ Hierarchy:
                         Id: 6bbc3c06-60d1-4a7c-9f69-d408a2da2d72
                         LightDuration: 0.4
                         Cooldown: 1.2
-            Base:
-                BasePartAsset: 9eb6404d-a826-426f-a2a7-b8bd7283e55a:prefab/audioCaller
-                BasePartId: 1e4edb11-59c3-4d6a-a82c-e9efc900a81e
-                InstanceId: 52e50c45-7eb4-4b7e-bdad-a1696ec4fafa
         -   Entity:
                 Id: 38bd736c-b86c-4bbc-8ccd-89c7eeed9b7b
                 Name: Wave
@@ -279,10 +263,6 @@ Hierarchy:
                                             ForceVortex: 0.0
                                             ForceRepulsive: 0.0
                                             ForceFixed: {X: 0.0, Y: 0.0, Z: 20.0}
-            Base:
-                BasePartAsset: 37f06626-4a2f-4f6e-a63d-720b98b71cf6:prefab/Player
-                BasePartId: 75ba993e-b8cd-4d3c-86b6-974d13f47411
-                InstanceId: 1f72664c-da88-4cc5-936b-260f581fba82
         -   Entity:
                 Id: 4a514661-b500-42ef-87d4-8de076ab9ce9
                 Name: audioCallerSound
@@ -300,10 +280,6 @@ Hierarchy:
                         UseHRTF: false
                         DirectionalFactor: 0.0
                         Environment: Large
-            Base:
-                BasePartAsset: 9eb6404d-a826-426f-a2a7-b8bd7283e55a:prefab/audioCaller
-                BasePartId: 31a0803b-51ca-4c3e-b6e0-25a0f66f1dd0
-                InstanceId: 52e50c45-7eb4-4b7e-bdad-a1696ec4fafa
         -   Entity:
                 Id: 57342d7a-7a99-4a03-ba9f-7b7217083bda
                 Name: Map
@@ -331,10 +307,6 @@ Hierarchy:
                         Projection: Perspective
                         VerticalFieldOfView: 52.0
                         Slot: c3841467-a895-4ca2-84ef-4b873907f23d
-            Base:
-                BasePartAsset: 37f06626-4a2f-4f6e-a63d-720b98b71cf6:prefab/Player
-                BasePartId: cf1b7599-f3b7-4afa-a769-1c4824b52d19
-                InstanceId: 1f72664c-da88-4cc5-936b-260f581fba82
         -   Entity:
                 Id: 8267f9e5-00e5-4caa-921e-6a00cb238298
                 Name: audioLight
@@ -350,15 +322,11 @@ Hierarchy:
                         Type: !LightPoint
                             Color: !ColorRgbProvider
                                 Value: {R: 0.63529414, G: 0.9137255, B: 0.9490196}
-                            Radius: 4.0
+                            Radius: 5.0
                             Shadow:
                                 Size: Small
                                 BiasParameters: {}
-                        Intensity: 0.2
-            Base:
-                BasePartAsset: 9eb6404d-a826-426f-a2a7-b8bd7283e55a:prefab/audioCaller
-                BasePartId: 79833282-46b2-4141-b0bd-a3a7faf4b43d
-                InstanceId: 52e50c45-7eb4-4b7e-bdad-a1696ec4fafa
+                        Intensity: 0.4
         -   Entity:
                 Id: 970e901c-cc2d-44bb-8fbf-1dcba12d4420
                 Name: EchoCollector
@@ -386,10 +354,6 @@ Hierarchy:
                         ContactEventHandler: !EchoMaze.Script.EchoCollector,EchoMaze ref!! db716aed-0ece-42d1-a54a-4b49f5c6ab25
                     1824fb5c6409951661b7ea4eff5deace: !EchoMaze.Script.EchoCollector,EchoMaze
                         Id: db716aed-0ece-42d1-a54a-4b49f5c6ab25
-            Base:
-                BasePartAsset: 9eb6404d-a826-426f-a2a7-b8bd7283e55a:prefab/audioCaller
-                BasePartId: 78b8170c-b0aa-4b39-9a4f-61bf74b1737e
-                InstanceId: 52e50c45-7eb4-4b7e-bdad-a1696ec4fafa
         -   Entity:
                 Id: 9eec5db4-46f6-4942-99a3-b92bec327571
                 Name: Point light
@@ -410,10 +374,6 @@ Hierarchy:
                                 Size: Small
                                 BiasParameters: {}
                         Intensity: 0.6
-            Base:
-                BasePartAsset: 37f06626-4a2f-4f6e-a63d-720b98b71cf6:prefab/Player
-                BasePartId: 5e36b41c-5a2b-4d8c-b99b-57489661c80a
-                InstanceId: 1f72664c-da88-4cc5-936b-260f581fba82
         -   Entity:
                 Id: a317b3a3-d576-4ccd-8ad9-f6c95927e3c5
                 Name: BatLight
@@ -433,10 +393,6 @@ Hierarchy:
                             Shadow:
                                 Size: Small
                                 BiasParameters: {}
-            Base:
-                BasePartAsset: 37f06626-4a2f-4f6e-a63d-720b98b71cf6:prefab/Player
-                BasePartId: f2c374d6-9717-4711-93d9-3df8172c653c
-                InstanceId: 1f72664c-da88-4cc5-936b-260f581fba82
         -   Entity:
                 Id: a988c0bf-42aa-47a7-888f-d4e0318bf9f0
                 Name: Caller
@@ -510,10 +466,6 @@ Hierarchy:
                         Scale: {X: 1.0, Y: 1.0, Z: 1.0}
                         Children:
                             63f6c6649b760183ad80505465f0cb8c: ref!! 10ef3ad5-5674-4653-9c79-25f503b1b3d8
-            Base:
-                BasePartAsset: 37f06626-4a2f-4f6e-a63d-720b98b71cf6:prefab/Player
-                BasePartId: 8be698dc-46d2-49b8-942e-93f109e57064
-                InstanceId: 1f72664c-da88-4cc5-936b-260f581fba82
         -   Entity:
                 Id: d767f57b-a3f9-42f0-8dc1-cf661d2d5209
                 Name: Wave
@@ -525,10 +477,6 @@ Hierarchy:
                         Scale: {X: 1.0, Y: 1.0, Z: 1.0}
                         Children:
                             4754f7ef590197dacf129a6bfeafa7a2: ref!! 78798dd6-f223-4a64-b1ea-74ebe99d508d
-            Base:
-                BasePartAsset: 37f06626-4a2f-4f6e-a63d-720b98b71cf6:prefab/Player
-                BasePartId: e9c6f538-4b11-4e7d-91aa-a5dd1771be92
-                InstanceId: 1f72664c-da88-4cc5-936b-260f581fba82
         -   Entity:
                 Id: ef8976e6-089d-43e4-b59f-108883c91a09
                 Name: Game

@@ -15,8 +15,6 @@ namespace EchoMaze.Script;
 public class EchoCollector : StartupScript, IContactHandler
 {
     public bool NoContactResponse => true;
-    public static EventKey winEvent = new EventKey("Global", "Winning");
-    public static EventKey<string> winEventData = new EventKey<string>("Global", "Winning Data");
 
 
     // Declared public member fields and properties will show in the game studio
@@ -27,8 +25,10 @@ public class EchoCollector : StartupScript, IContactHandler
 
     void IContactHandler.OnStartedTouching<TManifold>(Contacts<TManifold> contacts)
     {
-        winEvent.Broadcast();
-        //DebugText.Print("Entered", new Int2(100, 100));
+        var menuScene = Content.Load<Scene>("MainMenu");
+        CharacterMovement.StopSound();
+        SceneSystem.SceneInstance.RootScene = null;
+        SceneSystem.SceneInstance.RootScene = menuScene;
     }
 
     void IContactHandler.OnStoppedTouching<TManifold>(Contacts<TManifold> contacts)

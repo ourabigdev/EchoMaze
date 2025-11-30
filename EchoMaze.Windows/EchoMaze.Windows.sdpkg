@@ -17,6 +17,7 @@ TemplateFolders: []
 RootAssets:
     - 1b4167d9-11a0-4559-8e49-093d195d4e6a:MainMenu
     - 2c0cc3ec-1293-4f85-aae2-dcf95a6f8f50:sound and music/batPower
+    - 81efcbae-a1ae-4d99-95c4-28c494b61214:sound and music/wings
     - cf2e0bbc-80b7-4f58-9e91-4f2449e77a7c:MainScene
     - e2652a01-86b8-4c0e-ba99-be5d2ff1f0a3:sound and music/ambient-sound-1-17076
     - ef69fb38-9f61-4c79-8026-1d6d7068840f:sound and music/knocking-97161

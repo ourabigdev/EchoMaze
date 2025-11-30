@@ -23,14 +23,16 @@ public class CharacterMovement : SyncScript
 
     private Entity BatLight;
     private Sound batSoundEffect;
-    private SoundInstance soundEffect;
+    private static SoundInstance soundEffect;
     private Sound CaveSoundEffect;
-    private SoundInstance caveSound;
+    private static SoundInstance caveSound;
+    private Sound WingsSoundEffect;
+    private static SoundInstance wingsSound;
 
     private LightComponent lightBat;
-    private float LightCooldown = 3f;
+    private float LightCooldown = 4f;
     private float cooldownTimer = 0f;
-    private float LightDuration = 2f;
+    private float LightDuration = 3f;
     private float timer = 0f;
     private bool lightActive = false;
 
@@ -42,6 +44,13 @@ public class CharacterMovement : SyncScript
         {
             anim.Play(name);
         }
+    }
+
+    public static void StopSound()
+    {
+        soundEffect.Stop();
+        caveSound.Stop();
+        wingsSound.Stop();
     }
 
     public override void Start()
@@ -65,11 +74,17 @@ public class CharacterMovement : SyncScript
         CaveSoundEffect = Content.Load<Sound>("sound and music/ambient-sound-1-17076");
         caveSound = CaveSoundEffect.CreateInstance();
         caveSound.IsLooping = true;
-        caveSound.Volume = 0.01f;
+        caveSound.Volume = 0.02f;
+        //wings
+        WingsSoundEffect = Content.Load<Sound>("sound and music/wings");
+        wingsSound = WingsSoundEffect.CreateInstance();
+        wingsSound.IsLooping = true;
+        wingsSound.Volume = .08f;
 
 
         //implement
         caveSound.Play();
+        wingsSound.Play();
         lightBat.Enabled = false;
         PlayAnimation("flap");
         particle.ParticleSystem.Stop();

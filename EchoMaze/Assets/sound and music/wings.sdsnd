@@ -1,0 +1,8 @@
+!Sound
+Id: 81efcbae-a1ae-4d99-95c4-28c494b61214
+SerializedVersion: {Stride: 2.0.0.0}
+Tags: []
+Source: !file ../../Resources/sounds and music/angel-wings-opening01-177180.mp3
+CompressionRatio: 15
+StreamFromDisk: false
+Spatialized: false

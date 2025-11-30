@@ -14,6 +14,21 @@ Hierarchy:
         - ref!! 20a95c68-16d7-4af5-86d5-c2bd3e277e1b
     Parts:
         -   Entity:
+                Id: 0302d360-0732-44bd-aed7-71910d63f9e5
+                Name: Menu
+                Components:
+                    3236028053da0a774da74a868ade3119: !TransformComponent
+                        Id: 36d37ef6-b5d9-4b24-8edc-580c488834c0
+                        Position: {X: 0.0, Y: 0.0, Z: 0.0}
+                        Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                        Scale: {X: 1.0, Y: 1.0, Z: 1.0}
+                        Children: {}
+                    630c9ff815ce133f125666a2c500b81c: !UIComponent
+                        Id: bd9cdca6-7533-4787-8ec4-3aace3913d7e
+                        Page: 0705a17c-a5f6-4326-8019-421b52399e0f:UI/Menu
+                        Resolution: {X: 1280.0, Y: 720.0, Z: 1000.0}
+                        Size: {X: 1.28, Y: 0.72, Z: 1.0}
+        -   Entity:
                 Id: 20a95c68-16d7-4af5-86d5-c2bd3e277e1b
                 Name: Manager
                 Components:
@@ -22,9 +37,26 @@ Hierarchy:
                         Position: {X: 0.0, Y: 0.0, Z: 0.0}
                         Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
                         Scale: {X: 1.0, Y: 1.0, Z: 1.0}
-                        Children: {}
+                        Children:
+                            e26a618b60ab3ba4c1dd7d132369e704: ref!! 36d37ef6-b5d9-4b24-8edc-580c488834c0
+                            987f70093a8da3ff63842f90927de2a0: ref!! 7beb2774-63e0-4f4e-9f0e-906d9719176d
                     762ac58299080378fed5e83a45f1ef79: !EchoMaze.Script.Menu,EchoMaze
                         Id: 3f6e6b5a-ef94-4119-873b-29e8ffc6a3e9
+        -   Entity:
+                Id: 352932df-9c68-42dd-90d5-833b49b18699
+                Name: Tutorial
+                Components:
+                    4fa10b88bae4137e14e6d380243cb892: !TransformComponent
+                        Id: 7beb2774-63e0-4f4e-9f0e-906d9719176d
+                        Position: {X: 0.0, Y: 0.0, Z: 0.0}
+                        Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                        Scale: {X: 1.0, Y: 1.0, Z: 1.0}
+                        Children: {}
+                    910a1bcf0aafc3c30c63ae1c79c3dc4c: !UIComponent
+                        Id: eb7e387f-1e2a-4ce0-9c3a-6934e2cbef20
+                        Page: 101faadd-2e50-4901-b391-d2fc228f0612:UI/Tutorial
+                        Resolution: {X: 1280.0, Y: 720.0, Z: 1000.0}
+                        Size: {X: 1.28, Y: 0.72, Z: 1.0}
         -   Entity:
                 Id: 365124f1-7f17-4ca1-a972-9e72d3cc1f25
                 Name: Directional light

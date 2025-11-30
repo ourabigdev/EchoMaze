@@ -42,7 +42,7 @@ Hierarchy:
                 HorizontalAlignment: Right
                 VerticalAlignment: Bottom
                 Margin: {}
-                Name: Start
+                Name: Play
                 Content: !TextBlock ref!! 253185f0-2c1d-46c5-aa66-7d4afe507dc8
                 PressedImage: !SpriteFromSheet
                     Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
