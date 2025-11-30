@@ -89,7 +89,6 @@ namespace EchoMaze.Script
             var startBtn = uiComponent.Page.RootElement.FindVisualChildOfType<Button>(MENU_START_NAME);
             if (startBtn != null)
             {
-                startBtn.Click -= OnMenuStartClicked;
                 startBtn.Click += OnMenuStartClicked;
                 menuStartButton = startBtn;
             }
@@ -116,7 +115,6 @@ namespace EchoMaze.Script
             var playBtn = TutorialComponent.Page.RootElement.FindVisualChildOfType<Button>(TUTORIAL_PLAY_NAME);
             if (playBtn != null)
             {
-                playBtn.Click -= OnTutorialPlayClicked;
                 playBtn.Click += OnTutorialPlayClicked;
                 tutorialPlayButton = playBtn;
             }

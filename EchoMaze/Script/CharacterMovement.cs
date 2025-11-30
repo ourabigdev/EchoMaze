@@ -36,6 +36,8 @@ public class CharacterMovement : SyncScript
     private float timer = 0f;
     private bool lightActive = false;
 
+    private static bool hasWon = false;
+
     public ParticleSystemComponent particle;
 
     protected void PlayAnimation(string name)
@@ -51,6 +53,11 @@ public class CharacterMovement : SyncScript
         soundEffect.Stop();
         caveSound.Stop();
         wingsSound.Stop();
+    }
+
+    public static void TriggerWin()
+    {
+        hasWon = true;
     }
 
     public override void Start()
@@ -89,11 +96,23 @@ public class CharacterMovement : SyncScript
         PlayAnimation("flap");
         particle.ParticleSystem.Stop();
         particle.ParticleSystem.ResetSimulation();
+        hasWon = false;
+
+        Entity.Transform.Position = new Vector3(0, 0, 0);
     }
 
     public override void Update()
     {
         // Do stuff every new frame
+        if (hasWon)
+        {
+            var menuScene = Content.Load<Scene>("MainMenu");
+            StopSound();
+            SceneSystem.SceneInstance.RootScene = null;
+            SceneSystem.SceneInstance.RootScene = menuScene;
+            Entity.Transform.Position = new Vector3(0, 0, 0);
+        }
+
         var velocity = new Vector3();
 
         bool forward = Input.IsKeyDown(Keys.W) || Input.IsKeyDown(Keys.Up) || Input.IsKeyDown(Keys.Z);

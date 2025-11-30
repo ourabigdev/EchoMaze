@@ -31,10 +31,7 @@ public class EchoCollector : StartupScript, IContactHandler
 
     void IContactHandler.OnStartedTouching<TManifold>(Contacts<TManifold> contacts)
     {
-        var menuScene = Content.Load<Scene>("MainMenu");
-        CharacterMovement.StopSound();
-        SceneSystem.SceneInstance.RootScene = null;
-        SceneSystem.SceneInstance.RootScene = menuScene;
+        CharacterMovement.TriggerWin();
     }
 
     void IContactHandler.OnStoppedTouching<TManifold>(Contacts<TManifold> contacts)
