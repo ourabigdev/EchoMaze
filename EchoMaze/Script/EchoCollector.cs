@@ -21,6 +21,12 @@ public class EchoCollector : StartupScript, IContactHandler
     public override void Start()
     {
         // Initialization of the script.
+        Console.WriteLine("Level script started.");
+    }
+    public override void Cancel()
+    {
+        base.Cancel();
+        Console.WriteLine("Level script shutdown");
     }
 
     void IContactHandler.OnStartedTouching<TManifold>(Contacts<TManifold> contacts)

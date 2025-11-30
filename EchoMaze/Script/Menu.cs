@@ -4,6 +4,7 @@ using Stride.Input;
 using Stride.UI;
 using Stride.UI.Controls;
 using System;
+using System.Diagnostics;
 
 namespace EchoMaze.Script
 {
@@ -38,6 +39,22 @@ namespace EchoMaze.Script
 
             // Always re-hook buttons
             LoadMenu();
+
+            Console.WriteLine("Menu script started.");
+            
+        }
+
+        public override void Cancel()
+        {
+            base.Cancel();
+
+            if (menuStartButton != null)
+                menuStartButton.Click -= OnMenuStartClicked;
+
+            if (tutorialPlayButton != null)
+                tutorialPlayButton.Click -= OnTutorialPlayClicked;
+
+            Console.WriteLine("Menu script shutdown");
         }
 
         // called when pressing Start in Menu
