@@ -1,4 +1,5 @@
-﻿using Stride.Core.Mathematics;
+﻿using Stride.Audio;
+using Stride.Core.Mathematics;
 using Stride.Engine;
 using Stride.Input;
 using Stride.UI;
@@ -15,13 +16,14 @@ namespace EchoMaze.Script
         private UIComponent TutorialComponent;
         private UIComponent uiComponent;
 
-        // keep references so we can unhook safely
         private Button menuStartButton;
         private Button tutorialPlayButton;
 
-        // Use distinct names for buttons to avoid confusion
-        private const string MENU_START_NAME = "Start";          // button inside Menu UI component
-        private const string TUTORIAL_PLAY_NAME = "Play";       // button inside Tutorial UI component (rename in UI to Play if you can)
+        private Sound Music;
+        private static SoundInstance musicSound;
+
+        private const string MENU_START_NAME = "Start"; 
+        private const string TUTORIAL_PLAY_NAME = "Play";       
 
         public override void Start()
         {
@@ -41,7 +43,12 @@ namespace EchoMaze.Script
             LoadMenu();
 
             Console.WriteLine("Menu script started.");
-            
+
+            Music = Content.Load<Sound>("sound and music/music");
+            musicSound = Music.CreateInstance();
+            musicSound.IsLooping = true;
+            musicSound.Volume = .2f;
+            musicSound.Play();
         }
 
         public override void Cancel()
@@ -72,6 +79,7 @@ namespace EchoMaze.Script
             SceneSystem.SceneInstance.RootScene = levelScene;
             Game.IsMouseVisible = false;
             Input.LockMousePosition();
+            musicSound.Stop();
         }
 
         private void LoadMenu()

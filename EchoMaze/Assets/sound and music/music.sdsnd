@@ -1,0 +1,7 @@
+!Sound
+Id: ee5f795d-91f5-4bb7-9b58-f9966a447c57
+SerializedVersion: {Stride: 2.0.0.0}
+Tags: []
+Source: !file ../../Resources/sounds and music/music.mp3
+StreamFromDisk: true
+Spatialized: false

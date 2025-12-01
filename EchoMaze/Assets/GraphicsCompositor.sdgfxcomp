@@ -38,6 +38,10 @@ RenderStages:
         Name: GBuffer
         EffectSlotName: GBuffer
         SortMode: !FrontToBackSortMode {}
+    9c9406b476a662f86ccdebda82ab6c12*:
+        Id: 073e308d-5ced-470f-8d2c-63d4e1ca3bfc
+        Name: UiStage
+        EffectSlotName: Main
 RenderFeatures:
     d8fb80b0e7995140a46bca8dc36ee8a2: !Stride.Rendering.MeshRenderFeature,Stride.Rendering
         RenderStageSelectors:
@@ -107,8 +111,13 @@ RenderFeatures:
     93933ad00d0c357d4915ad462cbfd04c: !Stride.Rendering.UI.UIRenderFeature,Stride.UI
         RenderStageSelectors:
             14a071694411235038a102ac3794bb4d: !Stride.Rendering.SimpleGroupToRenderStageSelector,Stride.Rendering
+                RenderGroup*: Group0, Group1, Group2, Group3, Group4, Group5, Group6, Group7, Group8, Group9, Group10, Group11, Group12, Group13, Group14, Group15, Group16, Group17, Group18, Group19, Group20, Group21, Group22, Group23, Group24, Group25, Group26, Group27, Group28, Group29, Group30
                 RenderStage: ref!! 326313c8-352c-4846-a49f-e24ddf378a4c
                 EffectName: Test
+            25f956a99cf683cc2e37936d60135ebf*: !Stride.Rendering.SimpleGroupToRenderStageSelector,Stride.Rendering
+                RenderGroup: Group31
+                RenderStage: ref!! 073e308d-5ced-470f-8d2c-63d4e1ca3bfc
+                EffectName: UiStage
     9013eab3ea0ef6c98bf133b86c173d45: !Stride.Particles.Rendering.ParticleEmitterRenderFeature,Stride.Particles
         RenderStageSelectors:
             af1bd241305893ef8ff7952184e1cb0b: !Stride.Particles.Rendering.ParticleEmitterTransparentRenderStageSelector,Stride.Particles
@@ -166,38 +175,41 @@ SharedRenderers:
     34ecb9b2633eacfc439ba8744fe05102: !PostProcessingEffects
         Id: 699685a7-7978-47e0-a2ee-325f23336c40
         Outline:
-            Enabled: false
+            Enabled*: false
             NormalWeight: 2.0
             DepthWeight: 0.2
             NormalNearCutoff: 0.1
         Fog:
-            Enabled: false
-            Density: 0.1
-            Color: {R: 1.0, G: 1.0, B: 1.0}
-            FogStart: 10.0
+            Enabled*: true
+            Density*: 0.0002
+            Color*: {R: 0.0875, G: 0.0875, B: 0.0875}
+            FogStart*: 5.0
             SkipBackground: false
         AmbientOcclusion:
-            Enabled: false
+            Enabled*: false
         LocalReflections:
-            Enabled: false
+            Enabled*: false
             ResolvePassResolution: Full
             DepthResolution: Half
         DepthOfField:
             Enabled: false
             DOFAreas: {X: 0.5, Y: 6.0, Z: 50.0, W: 200.0}
         BrightFilter:
-            Enabled*: false
-            Color: {R: 1.0, G: 1.0, B: 1.0}
+            Enabled*: true
+            Threshold*: 0.0
+            Color*: {R: 1.0, G: 1.0, B: 1.0}
         Bloom:
-            Enabled*: false
+            Enabled*: true
+            Radius*: 17.0
+            Amount*: 1.5
             Distortion: {X: 1.0, Y: 1.0}
             Afterimage:
-                Enabled: false
+                Enabled*: false
         LightStreak:
             Enabled*: false
             Attenuation: 0.7
         LensFlare:
-            Enabled*: false
+            Enabled*: true
         ColorTransforms:
             Transforms:
                 1e06f805f8b2e949a06c30d45fe413ef: !ToneMap
@@ -210,19 +222,32 @@ SharedRenderers:
                 e86e22e9a5d65545b8b55fca26e0afee: !Vignetting
                     Enabled*: true
                     Color: {R: 0.0, G: 0.0, B: 0.0}
-        Antialiasing: !FXAAEffect {}
+        Antialiasing: !FXAAEffect
+            Enabled*: false
     ee80a20a9bd99f2d70711114e15fe7ca: !Stride.Rendering.Compositing.DebugRenderer,Stride.Rendering
         Id: 03c8d598-3455-4d15-a10c-82c2deb38cc8
         DebugRenderStages: {}
-Game: !Stride.Rendering.Compositing.SceneCameraRenderer,Stride.Engine
-    Id: 76fe87cf-f574-4ad6-85b8-e9a9586be0e2
-    Camera: ref!! c3841467-a895-4ca2-84ef-4b873907f23d
-    Child: !Stride.Rendering.Compositing.SceneRendererCollection,Stride.Rendering
-        Id: 82568e46-92e7-421a-8dca-114a74e0cd69
-        Children:
-            d39c5ddbf8b7d5ca02bafb6496b1cc3c: !Stride.Rendering.Compositing.ForwardRenderer,Stride.Engine ref!! 672da7f2-adc0-4d3e-a2b7-4f7021490a3d
-            01d338078e9b21121ead0868932613dd: !Stride.Rendering.Compositing.DebugRenderer,Stride.Rendering ref!! 03c8d598-3455-4d15-a10c-82c2deb38cc8
-    RenderMask: All
+Game*: !Stride.Rendering.Compositing.SceneRendererCollection,Stride.Rendering
+    Id: 7ba6ecf8-7e79-49c8-b03c-bd517a7a363e
+    Children:
+        9a10135aaa126be03c35eb4a72c9b961: !Stride.Rendering.Compositing.SceneCameraRenderer,Stride.Engine
+            Id: 927388f1-e850-409f-8c78-da908221f9e3
+            Camera: ref!! c3841467-a895-4ca2-84ef-4b873907f23d
+            Child: !Stride.Rendering.Compositing.ForwardRenderer,Stride.Engine ref!! 672da7f2-adc0-4d3e-a2b7-4f7021490a3d
+            RenderMask: All
+        51791652e79e4f7d8fcc5faa05b0eebe: !Stride.Rendering.Compositing.SceneCameraRenderer,Stride.Engine
+            Id: e48dc3fb-464c-402d-b9ec-2b8904b71c13
+            Camera: ref!! c3841467-a895-4ca2-84ef-4b873907f23d
+            Child: !Stride.Rendering.Compositing.SingleStageRenderer,Stride.Rendering
+                Id: 1f04c8da-b41b-4600-b369-da3632820b29
+                RenderStage: ref!! 073e308d-5ced-470f-8d2c-63d4e1ca3bfc
+            RenderMask: Group31
 SingleView: !Stride.Rendering.Compositing.ForwardRenderer,Stride.Engine ref!! 8cc78f6c-ca73-4233-8ea8-98bd9bf6a8e9
-Editor: !Stride.Rendering.Compositing.ForwardRenderer,Stride.Engine ref!! 672da7f2-adc0-4d3e-a2b7-4f7021490a3d
+Editor*: !Stride.Rendering.Compositing.SceneRendererCollection,Stride.Rendering
+    Id: 4e57822f-7615-4741-966c-0b229ac7c47c
+    Children:
+        c9f7bf132278ea41f555bad2e00356f9: !Stride.Rendering.Compositing.ForwardRenderer,Stride.Engine ref!! 672da7f2-adc0-4d3e-a2b7-4f7021490a3d
+        a8c4cd076991dca58d20668859cecbc7: !Stride.Rendering.Compositing.SingleStageRenderer,Stride.Rendering
+            Id: 3b0a53f7-e848-454f-92ad-b910d0589dd7
+            RenderStage: ref!! 073e308d-5ced-470f-8d2c-63d4e1ca3bfc
 BlockPositions: {}

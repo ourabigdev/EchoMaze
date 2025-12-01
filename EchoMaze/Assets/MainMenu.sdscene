@@ -25,9 +25,11 @@ Hierarchy:
                         Children: {}
                     630c9ff815ce133f125666a2c500b81c: !UIComponent
                         Id: bd9cdca6-7533-4787-8ec4-3aace3913d7e
+                        Enabled: false
                         Page: 0705a17c-a5f6-4326-8019-421b52399e0f:UI/Menu
                         Resolution: {X: 1280.0, Y: 720.0, Z: 1000.0}
                         Size: {X: 1.28, Y: 0.72, Z: 1.0}
+                        RenderGroup: Group31
         -   Entity:
                 Id: 20a95c68-16d7-4af5-86d5-c2bd3e277e1b
                 Name: Manager
@@ -43,6 +45,17 @@ Hierarchy:
                     762ac58299080378fed5e83a45f1ef79: !EchoMaze.Script.Menu,EchoMaze
                         Id: 3f6e6b5a-ef94-4119-873b-29e8ffc6a3e9
         -   Entity:
+                Id: 28f013a6-789d-473b-8e1d-7071c4f5290a
+                Name: crystal
+                Components:
+                    85a8f52cf41e8cd3908ad55ae2b82727: !TransformComponent
+                        Id: e7843baa-7415-4424-ac32-15bb07e137b3
+                        Position: {X: 0.39685142, Y: -1.1388948, Z: -6.4705873}
+                        Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                        Scale: {X: 1.0, Y: 1.0, Z: 1.0}
+                        Children:
+                            c5d4538d3e60db944e1da5fb1e1b13df: ref!! 0b1b0056-7d40-4d96-8540-490bc0c7bde7
+        -   Entity:
                 Id: 352932df-9c68-42dd-90d5-833b49b18699
                 Name: Tutorial
                 Components:
@@ -54,9 +67,11 @@ Hierarchy:
                         Children: {}
                     910a1bcf0aafc3c30c63ae1c79c3dc4c: !UIComponent
                         Id: eb7e387f-1e2a-4ce0-9c3a-6934e2cbef20
+                        Enabled: false
                         Page: 101faadd-2e50-4901-b391-d2fc228f0612:UI/Tutorial
                         Resolution: {X: 1280.0, Y: 720.0, Z: 1000.0}
                         Size: {X: 1.28, Y: 0.72, Z: 1.0}
+                        RenderGroup: Group31
         -   Entity:
                 Id: 365124f1-7f17-4ca1-a972-9e72d3cc1f25
                 Name: Directional light
@@ -122,7 +137,8 @@ Hierarchy:
                         Position: {X: 0.0, Y: 0.0, Z: 0.0}
                         Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
                         Scale: {X: 1.0, Y: 1.0, Z: 1.0}
-                        Children: {}
+                        Children:
+                            a766333f95e9d4ec2d18722e1833eb32: ref!! e7843baa-7415-4424-ac32-15bb07e137b3
                     d63fa05650a05fb601f717c49e405924: !ModelComponent
                         Id: 78ad98d6-ff32-4839-801f-ae7746adf2ee
                         Model: b885b229-c585-4f74-abb1-00b115030d09:Models/cave
@@ -141,3 +157,143 @@ Hierarchy:
                         Id: a8a581de-c550-4816-a253-b881b3a6433c
                         Model: 528a919c-4369-43ac-8728-6f7ea6d42005:Models/bat
                         Materials: {}
+        -   Entity:
+                Id: da71464d-0837-457f-a7f0-9ea645d49d07
+                Name: crystal
+                Components:
+                    5555c81dd2085222d019ae9a4349a606: !TransformComponent
+                        Id: 0b1b0056-7d40-4d96-8540-490bc0c7bde7
+                        Position: {X: 0.0, Y: 0.0, Z: 0.0}
+                        Rotation: {X: 0.0, Y: 0.0, Z: 0.70710677, W: 0.70710677}
+                        Scale: {X: 1.0, Y: 1.0, Z: 1.0}
+                        Children:
+                            12de410bd1067380878d4e51bcde1cf6: ref!! aec96724-f02d-46a6-b05f-c63270826eb5
+                    257dccd887fb954f6b48a6884fc0a321: !ModelComponent
+                        Id: e4d7379c-1efb-4a32-a826-b57146bff775
+                        Model: 57f48ba0-16e3-4a82-89f1-c440fe97a034:Models/crystal
+                        Materials: {}
+                    a0f58cfea00ff39dea82fe96b1c3c2dd: !AudioEmitterComponent
+                        Id: 7c202d77-8bab-4aca-aeb6-df853b6b9fda
+                        Sounds:
+                            1b6c7592c9a3065fc761b8881e53326d~crystal: 816306eb-ecde-42fc-9d22-9fae42cce079:sound and music/crystal
+                        UseHRTF: false
+                        DirectionalFactor: 0.0
+                        Environment: Large
+                    826f479864e3827274f115e7942c7fdb: !EchoMaze.Script.crystal,EchoMaze
+                        Id: c973b096-d8f3-43df-b92e-fae1ae8365e5
+            Base:
+                BasePartAsset: 09ba2713-a6c7-4b8a-94cd-cec603d4f1ec:prefab/crystal
+                BasePartId: 154a3b5f-d74e-4522-bab7-8bf923e97422
+                InstanceId: f81d3815-cfde-4472-b750-180b4eee9a4f
+        -   Entity:
+                Id: e810dadb-0ad1-4b91-958c-c0dfa33a1a43
+                Name: Simple particle system
+                Components:
+                    86ced9454673c2516b58d9e3f9e31f1a: !TransformComponent
+                        Id: aec96724-f02d-46a6-b05f-c63270826eb5
+                        Position: {X: 2.8163992E-08, Y: 0.0, Z: 0.0}
+                        Rotation: {X: -0.0, Y: 0.0, Z: -0.70710677, W: 0.70710677}
+                        Scale: {X: 1.0, Y: 1.0, Z: 1.0}
+                        Children: {}
+                    805ccf77897e9b0c4203dbc1a9cec815: !ParticleSystemComponent
+                        Id: 179f5bde-0db0-4a1c-be8e-0e1d0564661b
+                        Control:
+                            ResetSeconds: 5.0
+                            Control: Play
+                        Color: {R: 1.0, G: 1.0, B: 1.0, A: 1.0}
+                        Speed: 1.0
+                        ParticleSystem:
+                            Settings: {}
+                            BoundingShape: null
+                            Emitters:
+                                391ce3435446bdf81dd99c9f5422dec1:
+                                    ParticleLifetime: {X: 0.5, Y: 0.8}
+                                    ShapeBuilder: !ShapeBuilderBillboard
+                                        SamplerPosition: null
+                                        SamplerSize: null
+                                        SamplerRotation: null
+                                    Material: !ParticleMaterialComputeColor
+                                        ComputeColor: !ComputeColor
+                                            Value: {R: 0.96875, G: 0.5933594, B: 0.90305656, A: 1.0}
+                                        UVBuilder: null
+                                        ForceTexCoords: false
+                                    Spawners:
+                                        9db6d357146215da317b5e92f2ea83d8: !SpawnerPerSecond
+                                            LoopCondition: Looping
+                                            Delay: {X: 0.0, Y: 0.0}
+                                            Duration: {X: 6.0, Y: 10.0}
+                                            SpawnCount: 5.0
+                                    Initializers:
+                                        22e81b28f53992c95a58acead0ab4e62: !InitialSizeSeed
+                                            InheritPosition: true
+                                            Position: {X: 0.0, Y: 0.0, Z: 0.0}
+                                            InheritRotation: true
+                                            Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                                            InheritScale: true
+                                            Scale: {X: 1.0, Y: 1.0, Z: 1.0}
+                                            ScaleUniform: 1.0
+                                            SeedOffset: 0
+                                            DisplayParticlePosition: false
+                                            DisplayParticleRotation: false
+                                            DisplayParticleScale: false
+                                            DisplayParticleScaleUniform: true
+                                            RandomSize: {X: 0.005, Y: 0.02}
+                                        0e3b33a0b956d6977359a00be1131220: !InitialPositionSeed
+                                            InheritPosition: true
+                                            Position: {X: 0.0, Y: 0.0, Z: 0.0}
+                                            InheritRotation: true
+                                            Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                                            InheritScale: true
+                                            Scale: {X: 1.0, Y: 1.0, Z: 1.0}
+                                            ScaleUniform: 1.0
+                                            SeedOffset: 0
+                                            DisplayParticlePosition: false
+                                            DisplayParticleRotation: true
+                                            DisplayParticleScale: false
+                                            DisplayParticleScaleUniform: true
+                                            PositionMin: {X: -0.5, Y: 1.0, Z: -0.5}
+                                            PositionMax: {X: 0.5, Y: 1.0, Z: 0.5}
+                                            Interpolate: false
+                                        3e1ce3045d024f0a26606e88cc953967: !InitialVelocitySeed
+                                            InheritPosition: true
+                                            Position: {X: 0.0, Y: 0.0, Z: 0.0}
+                                            InheritRotation: true
+                                            Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                                            InheritScale: true
+                                            Scale: {X: 1.0, Y: 1.0, Z: 1.0}
+                                            ScaleUniform: 1.0
+                                            SeedOffset: 0
+                                            DisplayParticlePosition: false
+                                            DisplayParticleRotation: true
+                                            DisplayParticleScale: false
+                                            DisplayParticleScaleUniform: true
+                                            VelocityMin: {X: -0.5, Y: 1.0, Z: -0.5}
+                                            VelocityMax: {X: 0.5, Y: 3.0, Z: 0.5}
+                                    Updaters:
+                                        6e573f01283a1ef4905642a47fa667ae: !UpdaterForceField
+                                            InheritPosition: true
+                                            Position: {X: 0.0, Y: 0.0, Z: 0.0}
+                                            InheritRotation: true
+                                            Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                                            InheritScale: true
+                                            Scale: {X: 1.0, Y: 1.0, Z: 1.0}
+                                            ScaleUniform: 1.0
+                                            DisplayParticlePosition: true
+                                            FieldShape: null
+                                            DisplayParticleRotation: true
+                                            DisplayParticleScale: true
+                                            DisplayParticleScaleUniform: false
+                                            FieldFalloff:
+                                                StrengthInside: 1.0
+                                                FalloffStart: 0.1
+                                                StrengthOutside: 0.0
+                                                FalloffEnd: 0.9
+                                            EnergyConservation: 0.0
+                                            ForceDirected: 0.0
+                                            ForceVortex: 1.0
+                                            ForceRepulsive: 1.0
+                                            ForceFixed: {X: 0.0, Y: 0.0, Z: 0.0}
+            Base:
+                BasePartAsset: 09ba2713-a6c7-4b8a-94cd-cec603d4f1ec:prefab/crystal
+                BasePartId: e9c660e4-5756-42d8-ba17-b31b3ea435a3
+                InstanceId: f81d3815-cfde-4472-b750-180b4eee9a4f

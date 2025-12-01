@@ -55,7 +55,7 @@ Hierarchy:
                 Font: 2e57a256-6178-4a35-9803-c9733b1b83bc:UI/Font
                 TextSize: 50.0
                 TextColor: {R: 240, G: 240, B: 240, A: 255}
-                OutlineColor: {R: 0, G: 36, B: 44, A: 255}
+                OutlineColor: {R: 0, G: 0, B: 0, A: 255}
                 OutlineThickness: 2.0
         -   UIElement: !Grid
                 Id: ae72c32d-434c-49ab-a4b7-48e70643418e

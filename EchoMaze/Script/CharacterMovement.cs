@@ -32,7 +32,7 @@ public class CharacterMovement : SyncScript
     private LightComponent lightBat;
     private float LightCooldown = 4f;
     private float cooldownTimer = 0f;
-    private float LightDuration = 3f;
+    private float LightDuration = 2f;
     private float timer = 0f;
     private bool lightActive = false;
 
@@ -81,7 +81,7 @@ public class CharacterMovement : SyncScript
         CaveSoundEffect = Content.Load<Sound>("sound and music/ambient-sound-1-17076");
         caveSound = CaveSoundEffect.CreateInstance();
         caveSound.IsLooping = true;
-        caveSound.Volume = 0.02f;
+        caveSound.Volume = 0.025f;
         //wings
         WingsSoundEffect = Content.Load<Sound>("sound and music/wings");
         wingsSound = WingsSoundEffect.CreateInstance();
@@ -111,6 +111,7 @@ public class CharacterMovement : SyncScript
             SceneSystem.SceneInstance.RootScene = null;
             SceneSystem.SceneInstance.RootScene = menuScene;
             Entity.Transform.Position = new Vector3(0, 0, 0);
+            Timer.Instance.ResetTimer();
         }
 
         var velocity = new Vector3();

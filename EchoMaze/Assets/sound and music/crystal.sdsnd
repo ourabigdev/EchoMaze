@@ -1,8 +1,8 @@
 !Sound
-Id: be02ead8-4ae9-47df-9fcc-b4257ac08e2b
+Id: 816306eb-ecde-42fc-9d22-9fae42cce079
 SerializedVersion: {Stride: 2.0.0.0}
 Tags: []
-Source: !file ../../Resources/sounds and music/knocking-97161.mp3
+Source: !file ../../Resources/sounds and music/crystal.mp3
 CompressionRatio: 15
 StreamFromDisk: false
 Spatialized: true

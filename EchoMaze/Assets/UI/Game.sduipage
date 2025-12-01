@@ -29,6 +29,23 @@ Hierarchy:
                 Margin: {}
                 Children:
                     656c8c3e531775212cce3a3d8c45b623: !TextBlock ref!! 8321aa36-5512-415d-bb07-865376b58a29
+                    11f4356cbc347accf971d6f83cee9213: !TextBlock ref!! c1551667-7dd8-437b-813f-32640e40783e
                 RowDefinitions: {}
                 ColumnDefinitions: {}
                 LayerDefinitions: {}
+        -   UIElement: !TextBlock
+                Id: c1551667-7dd8-437b-813f-32640e40783e
+                DependencyProperties: {}
+                BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
+                Width: 98.0
+                Height: 720.0
+                HorizontalAlignment: Right
+                Margin: {Top: 25.0, Right: 23.0, Bottom: -25.0}
+                Name: Timer
+                Text: 0
+                Font: 2e57a256-6178-4a35-9803-c9733b1b83bc:UI/Font
+                TextSize: 60.0
+                TextColor: {R: 240, G: 240, B: 240, A: 255}
+                OutlineColor: {R: 0, G: 0, B: 0, A: 255}
+                OutlineThickness: 2.0
+                TextAlignment: Center
