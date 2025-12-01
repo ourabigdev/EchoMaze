@@ -11,7 +11,7 @@ The game is fully designed around the jam theme "Echo" and focuses on sound-base
 
 ## Play the Game
 
-You can play or download EchoMaze here:  
+You can play or download EchoMaze here(still in developement):  
 https://ourabig.itch.io/echomaze
 
 ## Features
