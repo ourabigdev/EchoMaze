@@ -22,7 +22,7 @@ public class audioCaller : SyncScript
 
     public override void Start()
     {
-        // --- LIGHT SETUP ---
+        // ligth setup
         lightEntity = Entity.FindChild("audioLight");
         if (lightEntity != null)
             lightComp = lightEntity.Get<LightComponent>();
@@ -30,14 +30,13 @@ public class audioCaller : SyncScript
             Console.WriteLine("audioCaller WARNING: Entity 'audioLight' not found.");
 
         if (lightComp != null)
-            lightComp.Enabled = false; // start OFF
+            lightComp.Enabled = false; 
 
-        timer = Cooldown; // wait before first flash
+        timer = Cooldown; 
 
         audioEntity = Entity.FindChild("audioCallerSound");
 
 
-        // --- AUDIO SETUP ---
         emitter = audioEntity.Get<AudioEmitterComponent>();
         if (emitter == null)
         {
@@ -52,10 +51,10 @@ public class audioCaller : SyncScript
             return;
         }
 
-        controller.IsLooping = true;   // loop forever
-        controller.Pitch = 1.0f;        // normal pitch
-        controller.Volume = 4f;      // adjust as needed
-        controller.Play();            // plays once at game start
+        controller.IsLooping = true;   
+        controller.Pitch = 1.0f;       
+        controller.Volume = 4f;      
+        controller.Play();            
     }
 
     public override void Update()
@@ -63,7 +62,6 @@ public class audioCaller : SyncScript
         float dt = (float)Game.UpdateTime.Elapsed.TotalSeconds;
         timer -= dt;
 
-        // --- LIGHT OFF PERIOD ---
         if (!isLightOn)
         {
             if (timer <= 0f)
@@ -78,7 +76,6 @@ public class audioCaller : SyncScript
             return;
         }
 
-        // --- LIGHT ON PERIOD ---
         if (isLightOn)
         {
             if (timer <= 0f)

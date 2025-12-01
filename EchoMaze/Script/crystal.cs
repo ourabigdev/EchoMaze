@@ -22,9 +22,9 @@ public class crystal : StartupScript
         emitter = Entity.Get<AudioEmitterComponent>();
         controller = emitter["crystal"];
 
-        controller.IsLooping = true;   // loop forever
-        controller.Pitch = 1.0f;        // normal pitch
-        controller.Volume = 0.2f;      // adjust as needed
-        controller.Play();            // plays once at game start
+        controller.IsLooping = true;   
+        controller.Pitch = 1.0f;        
+        controller.Volume = 0.2f;      
+        controller.Play();            
     }
 }

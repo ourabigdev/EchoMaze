@@ -8,7 +8,7 @@ namespace EchoMaze.Script
 {
     public class Timer : SyncScript
     {
-        public static Timer Instance;   // <--- Global access
+        public static Timer Instance;   
 
         private float elapsedTime = 0f;
         private TextBlock timerUi;
@@ -16,7 +16,7 @@ namespace EchoMaze.Script
 
         public override void Start()
         {
-            Instance = this; // <--- store instance
+            Instance = this; 
 
             uiComponent = Entity.Get<UIComponent>();
             var page = uiComponent.Page;
@@ -29,7 +29,6 @@ namespace EchoMaze.Script
             timerUi.Text = ((int)elapsedTime).ToString();
         }
 
-        // <--- Call this from any script!
         public void ResetTimer()
         {
             elapsedTime = 0f;

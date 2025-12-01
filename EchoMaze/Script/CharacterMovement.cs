@@ -103,7 +103,6 @@ public class CharacterMovement : SyncScript
 
     public override void Update()
     {
-        // Do stuff every new frame
         if (hasWon)
         {
             var menuScene = Content.Load<Scene>("MainMenu");

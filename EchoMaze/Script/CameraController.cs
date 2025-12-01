@@ -44,7 +44,6 @@ public class CameraController : SyncScript
 
     public override void Update()
     {
-        // Do stuff every new frame
 
         if (Input.IsKeyPressed(Keys.Escape))
         {
@@ -58,7 +57,6 @@ public class CameraController : SyncScript
             Input.LockMousePosition();
             var mouseMovement = Input.MouseDelta * MouseSpeed;
 
-            //update rotation withou mouse movement
             camRotation.Y += -mouseMovement.X;
             camRotation.X += InvertY ? -mouseMovement.Y : mouseMovement.Y;
             camRotation.X = MathUtil.Clamp(camRotation.X, maxCameraAngleRadians.X, maxCameraAngleRadians.Y);
@@ -66,22 +64,16 @@ public class CameraController : SyncScript
             character.Orientation = Quaternion.RotationY(camRotation.Y);
             cameraPivot.Transform.Rotation = Quaternion.RotationX(camRotation.X);
 
-            // --- Build desired camera world position correctly (relative to cameraPivot) ---
-            // CameraOffset is in the pivot's local space (0,0,-10)
             var pivotWorldMatrix = cameraPivot.Transform.WorldMatrix;
             var rayStart = pivotWorldMatrix.TranslationVector;
 
-            // Transform the local offset into world coordinates to get the desired camera world position
             var desiredWorld = Vector3.TransformCoordinate(CameraOffset, pivotWorldMatrix);
 
-            // from pivot to desired camera position (world)
             var camToTarget = desiredWorld - rayStart;
             var distance = camToTarget.Length();
 
-            // safety: avoid zero-length
             if (distance < 0.0001f)
             {
-                // fallback: place at min distance behind pivot
                 desiredWorld = rayStart + Vector3.TransformCoordinate(new Vector3(0, 0, -MinimumCameraDistance), pivotWorldMatrix);
                 camToTarget = desiredWorld - rayStart;
                 distance = camToTarget.Length();
@@ -89,25 +81,19 @@ public class CameraController : SyncScript
 
             var direction = Vector3.Normalize(camToTarget);
 
-            // --- Move ray start slightly forward to avoid hitting the character's own collider ---
-            const float selfHitOffset = 0.2f; // tweak: 0.1-0.4
+            const float selfHitOffset = 0.2f;
             var rayStartSafe = rayStart + direction * selfHitOffset;
             var maxDistance = Math.Max(0.0f, distance - selfHitOffset);
 
-            // --- Do BEPU raycast ---
             if (simulation.RayCast(rayStartSafe, direction, maxDistance, out HitInfo hit))
             {
-                // Hit point is in world space. Compute camera world position just before the hit.
                 var hitDistFromPivot = Vector3.Distance(rayStart, hit.Point);
                 var desiredDist = Math.Max(MinimumCameraDistance, hitDistFromPivot - 0.1f);
 
-                // new camera world position along direction (backwards from pivot)
                 var newCameraWorld = rayStart + direction * desiredDist;
 
-                // Convert world position into thirdPersonPivot's local space
-                // If thirdPersonPivot has a parent, transform by inverse of parent's world matrix.
                 var parentWorld = thirdPersonPivot.Transform.Parent?.WorldMatrix ?? Matrix.Identity;
-                Matrix.Invert(ref parentWorld, out Matrix parentWorldInverse); // invert parent matrix
+                Matrix.Invert(ref parentWorld, out Matrix parentWorldInverse); 
                 var newLocal = Vector3.TransformCoordinate(newCameraWorld, parentWorldInverse);
 
                 thirdPersonPivot.Transform.Position = newLocal;
@@ -115,7 +101,6 @@ public class CameraController : SyncScript
             }
             else
             {
-                // No hit — set to default offset (local)
                 thirdPersonPivot.Transform.Position = CameraOffset;
                 thirdPersonPivot.Transform.UpdateWorldMatrix();
             }

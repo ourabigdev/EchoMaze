@@ -12,19 +12,17 @@ namespace EchoMaze.Script;
 
 public class follow : StartupScript
 {
-    // Declared public member fields and properties will show in the game studio
     private AudioEmitterComponent emitter;
     private AudioEmitterSoundController controller;
 
     public override void Start()
     {
-        // Initialization of the script.
         emitter = Entity.Get<AudioEmitterComponent>();
         controller = emitter["follow"];
 
-        controller.IsLooping = true;   // loop forever
-        controller.Pitch = 1.0f;        // normal pitch
-        controller.Volume = 0.2f;      // adjust as needed
-        controller.Play();            // plays once at game start
+        controller.IsLooping = true;   
+        controller.Pitch = 1.0f;        
+        controller.Volume = 0.2f;     
+        controller.Play();            
     }
 }

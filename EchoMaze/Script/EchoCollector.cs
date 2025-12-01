@@ -16,11 +16,8 @@ public class EchoCollector : StartupScript, IContactHandler
 {
     public bool NoContactResponse => true;
 
-
-    // Declared public member fields and properties will show in the game studio
     public override void Start()
     {
-        // Initialization of the script.
         Console.WriteLine("Level script started.");
     }
     public override void Cancel()
