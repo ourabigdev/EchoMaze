@@ -29,20 +29,19 @@ Hierarchy:
                 DependencyProperties: {}
                 BackgroundColor: {R: 0, G: 0, B: 0, A: 0}
                 DrawLayerNumber: 2
-                Width: 258.0
-                Height: 95.0
-                VerticalAlignment: Bottom
-                Margin: {Left: 488.0, Right: 534.0, Bottom: 255.0}
+                Width: 223.0
+                Height: 110.0
+                Margin: {Left: 529.0, Top: 354.0, Right: 528.0, Bottom: 256.0}
                 Name: Start
                 Content: !TextBlock ref!! ade0edd4-8438-4afd-80bd-16305af707f0
                 PressedImage: !SpriteFromSheet
-                    Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
-                    CurrentFrame: 2
+                    Sheet: 07f555f7-4c4d-4393-9333-08e21c0fae33:UI/SpriteSheet
                 NotPressedImage: !SpriteFromSheet
-                    Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
+                    Sheet: 07f555f7-4c4d-4393-9333-08e21c0fae33:UI/SpriteSheet
                     CurrentFrame: 1
                 MouseOverImage: !SpriteFromSheet
-                    Sheet: 1be3340c-b797-4557-bff7-d9be92dfdb42:StrideUIDesigns
+                    Sheet: 07f555f7-4c4d-4393-9333-08e21c0fae33:UI/SpriteSheet
+                    CurrentFrame: 2
                 Color: {R: 255, G: 255, B: 255, A: 255}
         -   UIElement: !TextBlock
                 Id: ade0edd4-8438-4afd-80bd-16305af707f0

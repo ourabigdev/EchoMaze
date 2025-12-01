@@ -1,0 +1,29 @@
+!SpriteSheet
+Id: 07f555f7-4c4d-4393-9333-08e21c0fae33
+SerializedVersion: {Stride: 2.0.0.0}
+Tags: []
+Type: UI
+ColorKeyColor: {R: 255, G: 0, B: 255, A: 255}
+Packing: {}
+Sprites:
+    c68b8902a3e089d36a3ce925a96e1b87:
+        Source: !file ../../Resources/BlackGreyUISheet.png
+        Name: greybox
+        TextureRegion: {X: 180, Y: 6, Width: 48, Height: 48}
+        Center: {X: 0.0, Y: 0.0}
+        Borders: {X: 0.0, Y: 0.0, Z: 0.0, W: 0.0}
+        BorderColor: {R: 0, G: 0, B: 0, A: 0}
+    d6339d81a96389371e5b9fb7713e1b59:
+        Source: !file ../../Resources/BlackGreyUISheet.png
+        Name: greyboxPressed
+        TextureRegion: {X: 116, Y: 6, Width: 48, Height: 48}
+        Center: {X: 0.0, Y: 0.0}
+        Borders: {X: 0.0, Y: 0.0, Z: 0.0, W: 0.0}
+        BorderColor: {R: 0, G: 0, B: 0, A: 0}
+    c0e6bb03edb496c58ab1ea37f20bb87c:
+        Source: !file ../../Resources/BlackGreyUISheet.png
+        Name: greyboxPressed
+        TextureRegion: {X: 244, Y: 8, Width: 48, Height: 46}
+        Center: {X: 0.0, Y: 0.0}
+        Borders: {X: 0.0, Y: 0.0, Z: 0.0, W: 0.0}
+        BorderColor: {R: 0, G: 0, B: 0, A: 0}
